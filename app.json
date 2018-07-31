@@ -1,0 +1,15 @@
+{
+    "name": "dsorecipes",
+    "scripts": {
+    },
+    "env": {
+    },
+    "formation": {
+    },
+    "addons": [
+  
+    ],
+    "buildpacks": [
+  
+    ]
+  }
