@@ -13,7 +13,30 @@ Sections
 @import 'var.less';
 
 /*----- Start Global Styles -----*/
-h1 {
-    color: @main-01;
-}
+    h1 {
+        color: @main-01;
+    }
+    .btn-primary {
+        background-color: @main-02;
+        border-color: @main-02;
+    }
+    .btn-primary:hover {
+        background-color: @main-01;
+        border-color: @main-01;
+        transition: 1s ease;
+        color: #e6e6e6;
+    }
 /*----- End Global Styles -----*/
+
+/*----- Start Login Styles -----*/
+    #login #logo {
+        width: 140px;
+        height: 80px;
+    }
+    @media screen and (min-width:340px) {
+        #login #logo {
+            width: 280px;
+            height: 160px;
+        }
+    }
+/*----- End Login Styles -----*/
