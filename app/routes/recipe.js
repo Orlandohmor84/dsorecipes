@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const Recipe = require('../models');
 
 router.get('/recipe/:recipeId', (req, res, next) => {
     
@@ -23,8 +26,11 @@ router.get('/recipe/:recipeId', (req, res, next) => {
                         status: doc.status,
                         name: doc.name,
                         ing1name: doc.ing1name,
-                        ing1Quant: doc.ing1Quant,
-                        ing1Unit: doc.ing1Unit,
+                        ing1quant: doc.ing1quant,
+                        ing1unit: doc.ing1unit,
+                        ing2name: doc.ing2name,
+                        ing2quant: doc.ing2quant,
+                        ing2unit: doc.ing2unit,
                         pathToRoot: '../',
                         pageTitle: 'Recipe',
                         pageID: 'recipe'

@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <% include partials/template/head.ejs %>
+    <% include partials/template/recipes/head.ejs %>
 </head>
 
 <body class="navSpacer" id="<%= pageID %>">
-        <% include partials/template/header.ejs %>
+    <% include partials/template/recipes/header.ejs %>
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
@@ -17,20 +17,19 @@
                 <h2>Recipe</h2>
                 <table class="table table-striped">
                     <thead>
-                    <tr>
-                        <th scope="col">Ingredient</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Unit</th>
+                        <tr>
+                            <th scope="col">Ingredient</th>
+                            <th scope="col">Quantity</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <% ingredients.forEach(function(ingredient) { 
-                            if(ing1Name) {
-                        %>
                         <tr>
-                            <th scope="row"><%= ing1Name %></th>
-                            <td><%= ing1Quant %></td>
-                            <td><%= ing1Unit %></td>
+                            <th scope="row"><%= ing1name %></th>
+                            <td><%= ing1quant %><%= ing1unit %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><%= ing2name %></th>
+                            <td><%= ing2quant %><%= ing2unit %></td>
                         </tr>
                     </tbody>
                 </table>
