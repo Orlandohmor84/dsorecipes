@@ -8,7 +8,7 @@
   "main": "app/app.js",
   "scripts": {
     "test": " SET NODE_ENV=test mocha src/server/test",
-    "start": "nodemon -e css,ejs,js,json --watch app --ignore events.json"
+    "start": "nodemon -e css,ejs,js,json --watch app"
   },
   "repository": {
     "type": "git",

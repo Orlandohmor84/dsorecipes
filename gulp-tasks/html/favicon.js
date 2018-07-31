@@ -17,13 +17,13 @@ const FAVICON_DATA_FILE = 'faviconData.json';
 // package (see the check-for-favicon-update task below).
 gulp.task('generate-favicon', function(done) {
 	realFavicon.generateFavicon({
-		masterPicture: './src/assets/img/brand/icon.png',
+		masterPicture: './src/assets/img/DSO-Logo.png',
 		dest: './app/',
 		iconsPath: '/',
 		design: {
 			ios: {
 				pictureAspect: 'backgroundAndMargin',
-				backgroundColor: '#3498db',
+				backgroundColor: '#ffffff',
 				margin: '14%',
 				assets: {
 					ios6AndPriorIcons: false,
@@ -36,7 +36,7 @@ gulp.task('generate-favicon', function(done) {
 			desktopBrowser: {},
 			windows: {
 				pictureAspect: 'noChange',
-				backgroundColor: '#3498db',
+				backgroundColor: '#ffffff',
 				onConflict: 'override',
 				assets: {
 					windows80Ie10Tile: false,
@@ -51,7 +51,7 @@ gulp.task('generate-favicon', function(done) {
 			},
 			androidChrome: {
 				pictureAspect: 'noChange',
-				themeColor: '#3498db',
+				themeColor: '#ffffff',
 				manifest: {
 					name: 'Doctors Scientific Organica',
 					display: 'standalone',
@@ -66,7 +66,7 @@ gulp.task('generate-favicon', function(done) {
 			},
 			safariPinnedTab: {
 				pictureAspect: 'silhouette',
-				themeColor: '#3498db'
+				themeColor: '#ffffff'
 			}
 		},
 		settings: {
