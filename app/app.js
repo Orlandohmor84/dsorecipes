@@ -29,6 +29,7 @@ app.use(require('./routes/admin'));
 app.use(require('./routes/manager'));
 app.use(require('./routes/schedule'));
 app.use(require('./routes/recipe'));
+app.use(require('./routes/404'));
 
 app.get('*', function(req, res){
     res.redirect('404');
