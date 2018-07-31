@@ -4,12 +4,10 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 router.get('/schedule', function(req, res, next) {
-    Events.find({}, function(err, events) {
-        res.render('schedule', {
-            pathToRoot: '/',
-            pageTitle: 'Schedule',
-            pageID: 'schedule',
-        });
+    res.render('schedule', {
+        pathToRoot: '/',
+        pageTitle: 'Schedule',
+        pageID: 'schedule',
     });
 });
 

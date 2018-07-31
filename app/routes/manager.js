@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 router.get('/manager', function(req, res, next) {
-    Events.find({}, function(err, events) {
+    Recipes.find({}, function(err, recipes) {
         res.render('manager', {
             pathToRoot: '/',
             pageTitle: 'Manager',
