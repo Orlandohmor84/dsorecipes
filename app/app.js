@@ -28,6 +28,7 @@ app.use(require('./routes/index'));
 app.use(require('./routes/admin'));
 app.use(require('./routes/manager'));
 app.use(require('./routes/schedule'));
+app.use(require('./routes/recipe'));
 
 app.get('*', function(req, res){
     res.redirect('404');

@@ -8,7 +8,7 @@ router.get('/schedule', function(req, res, next) {
         res.render('schedule', {
             pathToRoot: '/',
             pageTitle: 'Schedule',
-            pageID: 'Schedule',
+            pageID: 'schedule',
         });
     });
 });

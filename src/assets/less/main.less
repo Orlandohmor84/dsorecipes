@@ -9,12 +9,14 @@ Sections
  - Global Styles
 ---------- */
 @import '../../vendor/bootstrap-4.1.0/css/bootstrap.css';
-@import '../css/signin.css';
 @import 'var.less';
 
 /*----- Start Global Styles -----*/
     h1 {
         color: @main-01;
+    }
+    h1,h2,h3,h4,h5,h6 {
+        text-align: center;
     }
     .btn-primary {
         background-color: @main-02;
@@ -25,6 +27,21 @@ Sections
         border-color: @main-01;
         transition: 1s ease;
         color: #e6e6e6;
+    }
+    .navSpacer {
+        padding-top: 100px;
+    }
+    .navbar {
+        color: #fff;
+    }
+    .navbar #logo {
+        max-width: 140px;
+        max-height: 80px;
+    }
+    .navbar h3 {
+        position: fixed;
+        right: 10px;
+        text-align: right;
     }
 /*----- End Global Styles -----*/
 
@@ -40,3 +57,7 @@ Sections
         }
     }
 /*----- End Login Styles -----*/
+
+/*----- Start Schedule Styles -----*/
+
+/*----- End Schedule Styles -----*/
