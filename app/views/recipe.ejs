@@ -15,7 +15,7 @@
                 <h3><%= category %></h3>
                 <h4><%= name %></h4>
                 <h5><%= flavor %></h5>
-                <img class="img-fluid" src="https://res.cloudinary.com/smart-for-life/image/upload/v1533137126/merchandise/1upBlueberry/1upBlueberry.png" alt="<%= category %> <%= name %> <%= flavor %>">
+                <img class="img-fluid" src="<%= imageURL %>" alt="<%= category %> <%= name %> <%= flavor %>">
             </div><!-- /.col -->
             <div class="col-sm-8">
                 <h2>Recipe</h2>
@@ -28,36 +28,83 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <% if (ing01name) { %>
                         <tr>
-                            <th scope="row"><%= ing1name %></th>
-                            <td><%= ing1quant %><%= ing1unit %></td>
-                            <td><%= ing1notes %></td>
+                            <th scope="row"><%= ing01name %></th>
+                            <td><%= ing01quant %><%= ing01unit %></td>
+                            <td><%= ing01notes %></td>
                         </tr>
+                        <% } %>
+                        <% if (ing02name) { %>
                         <tr>
-                            <th scope="row"><%= ing2name %></th>
-                            <td><%= ing2quant %><%= ing2unit %></td>
-                            <td><%= ing2notes %></td>
+                            <th scope="row"><%= ing02name %></th>
+                            <td><%= ing02quant %><%= ing02unit %></td>
+                            <td><%= ing02notes %></td>
                         </tr>
+                        <% } %>
+                        <% if (ing03name) { %>
                         <tr>
-                            <th scope="row"><%= ing3name %></th>
-                            <td><%= ing3quant %><%= ing3unit %></td>
-                            <td><%= ing3notes %></td>
+                            <th scope="row"><%= ing03name %></th>
+                            <td><%= ing03quant %><%= ing03unit %></td>
+                            <td><%= ing03notes %></td>
                         </tr>
+                        <% } %>
+                        <% if (ing04name) { %>
                         <tr>
-                            <th scope="row"><%= ing4name %></th>
-                            <td><%= ing4quant %><%= ing4unit %></td>
-                            <td><%= ing4notes %></td>
+                            <th scope="row"><%= ing04name %></th>
+                            <td><%= ing04quant %><%= ing04unit %></td>
+                            <td><%= ing04notes %></td>
                         </tr>
+                        <% } %>
+                        <% if (ing05name) { %>
                         <tr>
-                            <th scope="row"><%= ing5name %></th>
-                            <td><%= ing5quant %><%= ing5unit %></td>
-                            <td><%= ing5notes %></td>
+                            <th scope="row"><%= ing05name %></th>
+                            <td><%= ing05quant %><%= ing05unit %></td>
+                            <td><%= ing05notes %></td>
                         </tr>
+                        <% } %>
+                        <% if (ing06name) { %>
                         <tr>
-                            <th scope="row"><%= ing6name %></th>
-                            <td><%= ing6quant %><%= ing6unit %></td>
-                            <td><%= ing6notes %></td>
+                            <th scope="row"><%= ing06name %></th>
+                            <td><%= ing06quant %><%= ing06unit %></td>
+                            <td><%= ing06notes %></td>
                         </tr>
+                        <% } %>
+                        <% if (ing07name) { %>
+                        <tr>
+                            <th scope="row"><%= ing07name %></th>
+                            <td><%= ing07quant %><%= ing07unit %></td>
+                            <td><%= ing07notes %></td>
+                        </tr>
+                        <% } %>
+                        <% if (ing08name) { %>
+                        <tr>
+                            <th scope="row"><%= ing08name %></th>
+                            <td><%= ing08quant %><%= ing08unit %></td>
+                            <td><%= ing08notes %></td>
+                        </tr>
+                        <% } %>
+                        <% if (ing09name) { %>
+                        <tr>
+                            <th scope="row"><%= ing09name %></th>
+                            <td><%= ing09quant %><%= ing09unit %></td>
+                            <td><%= ing09notes %></td>
+                        </tr>
+                        <% } %>
+                        <% if (ing10name) { %>
+                        <tr>
+                            <th scope="row"><%= ing10name %></th>
+                            <td><%= ing10quant %><%= ing10unit %></td>
+                            <td><%= ing10notes %></td>
+                        </tr>
+                        <% } %>
+                        <% if (ing11name) { %>
+                        <tr>
+                            <th scope="row"><%= ing11name %></th>
+                            <td><%= ing11quant %><%= ing11unit %></td>
+                            <td><%= ing11notes %></td>
+                        </tr>
+                        <% } %>
                     </tbody>
                 </table>
             </div><!-- /.col -->

@@ -39,6 +39,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('app/public'));
 app.use(require('./routes/index'));
+app.use(require('./routes/login'));
 app.use(require('./routes/admin'));
 app.use(require('./routes/manager'));
 app.use(require('./routes/schedule'));
