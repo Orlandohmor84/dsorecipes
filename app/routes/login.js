@@ -13,7 +13,7 @@ router.post('/login', function(req, res, next) {
             res.render('admin', {
                 recipes: recipes,
                 pathToRoot: '/',
-                pageTitle: 'Admin',
+                pageTitle: 'Admin Portal',
                 pageID: 'admin',
         });
     });

@@ -1,6 +1,21 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top">
-        <img class="img-fluid" id="logo" src="img/DSO-Logo.png" alt="Doctors Scientific Organica">
-        <% if (pageID == 'recipe') { %>
-        <h3>Start Time:</h3>
-        <% } %>
+
+<!--<nav class="navbar navbar-expand-xs navbar-dark fixed-top">
+        
+</nav>-->
+<nav class="navbar">
+    <a class="navbar-brand" href="/"><img class="img-fluid" id="logo" src="img/DSO-Logo.png" alt="Doctors Scientific Organica"></a>
+    <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars fa-1x"></i></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/recipes">Recipes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/schedule">Schedule</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Logout <span class="sr-only">(current)</span></a>
+        </li>
+        </ul>
+    </div>
 </nav>
