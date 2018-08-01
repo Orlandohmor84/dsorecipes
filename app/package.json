@@ -1,7 +1,7 @@
 {
   "name": "mixapp",
   "version": "1.0.0",
-  "description": "doctors scientific organica mix room web app",
+  "description": "Doctors Scientific Organica Mixing Web App",
   "engines": {
     "node": "8.11.3"
   },
