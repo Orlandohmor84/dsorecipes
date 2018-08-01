@@ -9,27 +9,54 @@
     <% include partials/template/recipes/header.ejs %>
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <h2>Product</h2>
-                <img class="img-fluid" src="http://via.placeholder.com/600x600" alt="">
+                <hr style="margin-top:0;">
+                <h3><%= category %></h3>
+                <h4><%= name %></h4>
+                <h5><%= flavor %></h5>
+                <img class="img-fluid" src="https://res.cloudinary.com/smart-for-life/image/upload/v1533137126/merchandise/1upBlueberry/1upBlueberry.png" alt="<%= category %> <%= name %> <%= flavor %>">
             </div><!-- /.col -->
-            <div class="col-sm-6">
+            <div class="col-sm-8">
                 <h2>Recipe</h2>
                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">Ingredient</th>
                             <th scope="col">Quantity</th>
+                            <th scope="col">Notes</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th scope="row"><%= ing1name %></th>
                             <td><%= ing1quant %><%= ing1unit %></td>
+                            <td><%= ing1notes %></td>
                         </tr>
                         <tr>
                             <th scope="row"><%= ing2name %></th>
                             <td><%= ing2quant %><%= ing2unit %></td>
+                            <td><%= ing2notes %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><%= ing3name %></th>
+                            <td><%= ing3quant %><%= ing3unit %></td>
+                            <td><%= ing3notes %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><%= ing4name %></th>
+                            <td><%= ing4quant %><%= ing4unit %></td>
+                            <td><%= ing4notes %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><%= ing5name %></th>
+                            <td><%= ing5quant %><%= ing5unit %></td>
+                            <td><%= ing5notes %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><%= ing6name %></th>
+                            <td><%= ing6quant %><%= ing6unit %></td>
+                            <td><%= ing6notes %></td>
                         </tr>
                     </tbody>
                 </table>
