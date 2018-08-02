@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/template/head.ejs %>
+</head>
+
+<body id="<%= pageID %>">
+        <% include partials/template/header.ejs %>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 title">
+                <h1><%= pageTitle %></h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>Recipes</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Category</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Flavor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% recipes.forEach(function(recipe) { %>
+                        <tr class="clickable-row" data-href="../recipe/<%= recipe._id %>">
+                            <th scope="row"><%= recipe.category %></th>
+                            <td><%= recipe.name %></td>
+                            <td><%= recipe.flavor %></td>
+                        </tr>
+                        <% }); %>
+                    </a>
+                    </tbody>
+                </table>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+
+    </div><!-- /.container -->
+    <% include partials/template/scripts.ejs %>
+</body>
+
+</html>
