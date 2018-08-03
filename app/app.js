@@ -1,10 +1,11 @@
 const express = require('express');
+const reload = require('reload');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const models = require('./models');
-const Recipe = models.Recipe;
+const modelRecipes = require('./models/recipes');
+const Recipe = modelRecipes.Recipe;
 const app = express();
 
 //Set up default mongoose connection
@@ -55,4 +56,4 @@ const server = app.listen(app.get('port'), function() {
   console.log('Listening on port ' + app.get('port'));
 });
 
-//reload(app);
+reload(app);

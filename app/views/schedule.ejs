@@ -15,12 +15,51 @@
         </div><!-- /.row -->
         <div class="row">
             <div class="col-xs-12">
-                <h2>Coming Soon!</h2>
+                <table class="table table-striped"  style="text-align:center;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Status</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Dur<br>(est)</th>
+                            <th scope="col">Dur<br>(actual)</th>
+                            <th scope="col">Assigned To</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Flavor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% events.forEach(function(event) { %>
+                        <tr>
+                            <% if (event.status == "Not Started") { %>
+                            <th scope="row" class="eventStatusNS"><%= event.status %></th>
+                            <% } else if (event.status == "In Progress") { %>
+                                <th scope="row" class="eventStatusIP"><%= event.status %></th>
+                            <% } else if (event.status == "Completed") { %>
+                                <th scope="row" class="eventStatusC"><%= event.status %></th>
+                            <% } else if (event.status == "Not Completed") { %>
+                                <th scope="row" class="eventStatusNC"><%= event.status %></th>
+                            <% } %>
+                            <td><%= event.date %></td>
+                            <td><%= event.time %></td>
+                            <td><%= event.durationEstimate %></td>
+                            <td><%= event.durationActual %></td>
+                            <td><%= event.assignedTo %></td>
+                            <td><%= event.category %></td>
+                            <td><%= event.name %></td>
+                            <td><%= event.flavor %></td>
+                        </tr>
+                        <% }) %>
+                        
+                    </tbody>
+                </table>
             </div><!-- /.col -->
         </div><!-- /.row -->
 
     </div><!-- /.container -->
     <% include partials/template/scripts.ejs %>
+
 </body>
 
 </html>

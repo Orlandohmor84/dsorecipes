@@ -4,7 +4,8 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Recipe = require('../models');
+const Recipe = require('../models/recipes');
+const Event = require('../models/events');
 
 router.get('/recipe/:recipeId', (req, res, next) => {
     
