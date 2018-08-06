@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/template/head.ejs %>
+</head>
+
+<body id="<%= pageID %>">
+        <% include partials/template/header.ejs %>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 title">
+                <h1><%= pageTitle %></h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <form method="POST" action="/schedule-review">
+            <div class="form-group">
+                <label for="mixRecipeSelect">Select Recipe</label>
+                <select class="form-control" id="mixRecipeSelect" name="mixRecipeSelect">
+                    <option value="">(select one)</option>
+                    <% recipes.forEach(function(recipe) { %>
+                    <option><%= recipe.category + ' ' + recipe.name + ' ' + recipe.flavor %></option>
+                    <% }) %>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Assign Mixer</label>
+                <select class="form-control" id="mixMixerSelect" name="mixMixerSelect">
+                    <option value="">(select one)</option>
+                    <option>Eric</option>
+                    <option>Rolayne</option>
+                    <option>Demetrius</option>
+                    <option>Gregory</option>
+                    <option>Phillip</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mixDateSelect">Select Date</label>
+                <input class="form-control" type="date" id="mixDateSelect" name="mixDateSelect">
+            </div>
+            <div class="form-group">
+                    <label for="mixTimeSelect">Select Time</label>
+                    <input class="form-control" type="time" id="mixDateTimeSelect" name="mixDateTimeSelect">
+                </div>
+            <div class="form-group">
+                <label for="mixRecipeNotes">Notes</label>
+                <textarea class="form-control" id="mixRecipeNotes" name="mixRecipeNotes" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div><!-- /.container -->
+    <% include partials/template/scripts.ejs %>
+</body>
+
+</html>

@@ -43,6 +43,8 @@ app.use(require('./routes/index'));
 app.use(require('./routes/dashboard'));
 app.use(require('./routes/admin'));
 app.use(require('./routes/schedule'));
+app.use(require('./routes/schedule-add'));
+app.use(require('./routes/schedule-review'));
 app.use(require('./routes/recipes'));
 app.use(require('./routes/recipe'));
 app.use(require('./routes/404'));

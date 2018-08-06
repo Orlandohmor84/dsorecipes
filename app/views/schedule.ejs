@@ -13,6 +13,11 @@
                 <h1><%= pageTitle %></h1>
             </div><!-- /.col -->
         </div><!-- /.row -->
+        <div class="row ctaButtons">
+            <div class="col-xs-12">
+                <button type="button" class="btn"><a href="/schedule-add">Add to Schedule</a></button>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
         <div class="row">
             <div class="col-xs-12">
                 <table class="table table-striped"  style="text-align:center;">
@@ -24,9 +29,7 @@
                             <th scope="col">Dur<br>(est)</th>
                             <th scope="col">Dur<br>(actual)</th>
                             <th scope="col">Assigned To</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Flavor</th>
+                            <th scope="col">Product</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,9 +49,7 @@
                             <td><%= event.durationEstimate %></td>
                             <td><%= event.durationActual %></td>
                             <td><%= event.assignedTo %></td>
-                            <td><%= event.category %></td>
-                            <td><%= event.name %></td>
-                            <td><%= event.flavor %></td>
+                            <td><%= event.category + ' ' + event.name + ' ' + event.flavor %></td>
                         </tr>
                         <% }) %>
                         
