@@ -15,54 +15,30 @@
         </div><!-- /.row -->
         <div class="row">
             <div class="col-xs-12">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <form>
+                    <table class="table table-striped"  style="text-align:center;">
+                        <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Dur<br>(est)</th>
+                                <th scope="col">Assigned To</th>
+                                <th scope="col">Product</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><%= date %></td>
+                                <td><%= time %></td>
+                                <td></td>
+                                <td><%= mixer %></td>
+                                <td><%= recipe %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn" type="submit">Submit</button>
+                    <button class="btn" type="button"><a href="/schedule-add">Edit</a></button>
+                    </form>
             </div><!-- /.col -->
         </div><!-- /.row -->
 
