@@ -28,11 +28,11 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><%= date %></td>
-                                <td><%= time %></td>
+                                <td id="mixDate"></td>
+                                <td id="mixTime"></td>
                                 <td></td>
-                                <td><%= mixer %></td>
-                                <td><%= recipe %></td>
+                                <td id="mixMixer"></td>
+                                <td id="mixRecipe"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -44,6 +44,34 @@
 
     </div><!-- /.container -->
     <% include partials/template/scripts.ejs %>
+    <script>
+        const reviewMixData = function() {
+            console.log('reviewMixData function starting.');
+
+            if(sessionStorage.address !== undefined) {
+                document.getElementById("mixRecipe").value = sessionStorage.mixRecipe;
+            }
+            
+            if(sessionStorage.address !== undefined) {
+                document.getElementById("mixMixer").value = sessionStorage.mixMixer;
+            }
+
+            if(sessionStorage.address !== undefined) {
+                document.getElementById("mixDate").value = sessionStorage.mixDate;
+            }
+
+            if(sessionStorage.address !== undefined) {
+                document.getElementById("mixTime").value = sessionStorage.mixTime;
+            }
+
+            if(sessionStorage.address !== undefined) {
+                document.getElementById("mixNotes").value = sessionStorage.mixNotes;
+            }
+        };
+        $(document).ready(function() {
+            reviewMixData();
+        });
+    </script>
 </body>
 
 </html>
