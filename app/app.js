@@ -49,6 +49,11 @@ app.use(require('./routes/recipes'));
 app.use(require('./routes/recipe'));
 app.use(require('./routes/404'));
 
+app.get('/robots.txt', function (req, res) {
+  res.type('text/plain');
+  res.send("User-agent: *\nDisallow: /");
+});
+
 app.get('*', function(req, res){
     res.redirect('404');
   });
