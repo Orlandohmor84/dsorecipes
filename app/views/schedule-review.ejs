@@ -24,6 +24,7 @@
                                 <th scope="col">Dur<br>(est)</th>
                                 <th scope="col">Assigned To</th>
                                 <th scope="col">Product</th>
+                                <th scope="col">Notes</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,9 +34,15 @@
                                 <td></td>
                                 <td id="mixMixer"></td>
                                 <td id="mixRecipe"></td>
+                                <td id="mixNotes"></td>
                             </tr>
                         </tbody>
                     </table>
+                    <input type="hidden" id="mixRecipeInput">
+                    <input type="hidden" id="mixMixerInput">
+                    <input type="hidden" id="mixDateInput">
+                    <input type="hidden" id="mixTimeInput">
+                    <input type="hidden" id="mixNotesInput">
                     <button class="btn" type="submit">Submit</button>
                     <button class="btn" type="button"><a href="/schedule-add">Edit</a></button>
                     </form>
@@ -48,24 +55,29 @@
         const reviewMixData = function() {
             console.log('reviewMixData function starting.');
 
-            if(sessionStorage.address !== undefined) {
-                document.getElementById("mixRecipe").value = sessionStorage.mixRecipe;
+            if(sessionStorage.mixRecipe !== undefined) {
+                document.getElementById("mixRecipe").innerText = sessionStorage.mixRecipe;
+                document.getElementById("mixRecipeInput").value = sessionStorage.mixRecipe;
             }
             
-            if(sessionStorage.address !== undefined) {
-                document.getElementById("mixMixer").value = sessionStorage.mixMixer;
+            if(sessionStorage.mixMixer !== undefined) {
+                document.getElementById("mixMixer").innerText = sessionStorage.mixMixer;
+                document.getElementById("mixMixerInput").value = sessionStorage.mixMixer;
             }
 
-            if(sessionStorage.address !== undefined) {
-                document.getElementById("mixDate").value = sessionStorage.mixDate;
+            if(sessionStorage.mixDate !== undefined) {
+                document.getElementById("mixDate").innerText = sessionStorage.mixDate;
+                document.getElementById("mixDateInput").value = sessionStorage.mixDate;
             }
 
-            if(sessionStorage.address !== undefined) {
-                document.getElementById("mixTime").value = sessionStorage.mixTime;
+            if(sessionStorage.mixTime !== undefined) {
+                document.getElementById("mixTime").innerText = sessionStorage.mixTime;
+                document.getElementById("mixTimeInput").value = sessionStorage.mixTime;
             }
 
-            if(sessionStorage.address !== undefined) {
-                document.getElementById("mixNotes").value = sessionStorage.mixNotes;
+            if(sessionStorage.mixNotes !== undefined) {
+                document.getElementById("mixNotes").innerText = sessionStorage.mixNotes;
+                document.getElementById("mixNotesInput").value = sessionStorage.mixNotes;
             }
         };
         $(document).ready(function() {
