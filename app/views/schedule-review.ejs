@@ -15,7 +15,7 @@
         </div><!-- /.row -->
         <div class="row">
             <div class="col-xs-12">
-                <form>
+                <form id="createEvent">
                     <table class="table table-striped"  style="text-align:center;">
                         <thead>
                             <tr>
@@ -43,9 +43,9 @@
                     <input type="hidden" id="mixDateInput">
                     <input type="hidden" id="mixTimeInput">
                     <input type="hidden" id="mixNotesInput">
-                    <button class="btn" type="submit">Submit</button>
+                    <button class="btn" id="createEventBtn" type="button">Submit</button>
                     <button class="btn" type="button"><a href="/schedule-add">Edit</a></button>
-                    </form>
+                </form>
             </div><!-- /.col -->
         </div><!-- /.row -->
 
@@ -82,6 +82,27 @@
         };
         $(document).ready(function() {
             reviewMixData();
+        });
+        $("#createEventBtn").click(function(e, data) {
+            $.ajax({
+                method: "POST",
+                url: "/schedule",
+                data: { 
+                    mixRecipeInput: $('#mixRecipeInput').val(),
+                    mixMixerInput: $('#mixMixerInput').val(),
+                    mixDateInput: $('#mixDateInput').val(),
+                    mixTimeInput: $('#mixTimeInput').val(),
+                    mixNotesInput:  $('#mixNotesInput').val()           
+                }
+            })
+            .done(function( msg ) {
+                console.log('New event added.');
+                console.log(data);
+                window.location.href = '/schedule';
+            })
+            .fail( function(xhr, textStatus, errorThrown) {
+                alert(xhr.responseText);
+            });
         });
     </script>
 </body>

@@ -19,7 +19,7 @@
                 <select class="form-control" id="mixRecipeSelect" name="mixRecipeSelect" oninput="sessionStorage.mixRecipe=this.value;">
                     <option value="">(select one)</option>
                     <% recipes.forEach(function(recipe) { %>
-                    <option><%= recipe.category + ' ' + recipe.name + ' ' + recipe.flavor %></option>
+                    <option><%= recipe.nameWhole %></option>
                     <% }) %>
                 </select>
             </div>

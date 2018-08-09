@@ -9,9 +9,7 @@ const EventSchema = new Schema({
     durationActual: Number,
     assignedTo: String,
     assignedFrom: String,
-    category : String,
-    name : String,
-    flavor: String
+    nameWhole : String
 });
 /*
 // the schema is useless so far

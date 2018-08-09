@@ -18,10 +18,33 @@ let data = mongoose.connection;
 data.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 router.get('/schedule', function(req, res, next) {
-    console.log("Events are " + Events);
-    console.log(Events);
     Events.find({}, function(err, events) {
         res.render('schedule', {
+            events: events,
+            pathToRoot: '/',
+            pageTitle: 'Schedule',
+            pageID: 'schedule'
+        });
+    });;
+});
+
+router.post('/schedule', function(req, res, next) {
+    const events = new Events({
+        status: 'Not Started',
+        nameWhole: req.body.mixRecipeInput,
+        assignedTo: req.body.mixMixerInput,
+        date: req.body.mixDateInputy,
+        time: req.body.mixTimeInput,
+        notes: req.body.notes
+    });
+    console.log('ID is ' + events._id);
+    events.save().then(() => console.log('New Event Created.')).catch(err => console.log(err));
+
+    console.log(events._id);
+    const eventsId = events._id;
+    
+    Events.find({}, function(err, events) {
+        res.redirect(200, '/schedule', {
             events: events,
             pathToRoot: '/',
             pageTitle: 'Schedule',

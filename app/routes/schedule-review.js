@@ -37,7 +37,7 @@ router.post('/schedule-review', function(req, res, next) {
     const eventId = event._id;*/
 
     res.render('schedule-review', {
-        recipe: req.body.mixRecipeSelect,
+        nameWhole: req.body.mixRecipeSelect,
         mixer: req.body.mixMixerSelect,
         date: req.body.mixDateSelect,
         time: req.body.mixTimeSelect,
