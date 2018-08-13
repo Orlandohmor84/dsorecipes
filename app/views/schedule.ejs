@@ -36,7 +36,13 @@
                         <% events.forEach(function(event) { %>
                         <tr>
                             <% if (event.status == "Not Started") { %>
-                            <th scope="row" class="eventStatusNS"><%= event.status %></th>
+                            <th scope="row" class="eventStatusNS">
+                                <%= event.status %><br><br>
+                                <form>
+                                    <input type="hidden"></input>
+                                    <button type="submit" class="btn"><a href="">Start</a></button>
+                                </form>
+                            </th>
                             <% } else if (event.status == "In Progress") { %>
                                 <th scope="row" class="eventStatusIP"><%= event.status %></th>
                             <% } else if (event.status == "Completed") { %>
