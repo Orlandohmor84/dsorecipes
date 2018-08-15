@@ -47,6 +47,7 @@ app.use(require('./routes/schedule-add'));
 app.use(require('./routes/schedule-review'));
 app.use(require('./routes/recipes'));
 app.use(require('./routes/recipe'));
+app.use(require('./routes/event'));
 app.use(require('./routes/404'));
 
 app.get('/robots.txt', function (req, res) {

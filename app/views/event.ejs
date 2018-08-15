@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/template/events/head.ejs %>
+</head>
+
+<body id="<%= pageID %>">
+        <% include partials/template/events/header.ejs %>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 title">
+                <h1><%= pageTitle %></h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="row">
+            <div class="col-xs-12">
+                <table class="table table-striped"  style="text-align:center;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Status</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Dur<br>(est)</th>
+                            <th scope="col">Dur<br>(actual)</th>
+                            <th scope="col">Assigned To</th>
+                            <th scope="col">Product</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <% if (status == "Not Started") { %>
+                            <th scope="row" class="eventStatusNS">
+                                <%= status %><br><br>
+                                <form>
+                                    <input type="hidden" name="status" value="In Progress"></input>
+                                    <button type="button" class="btn" id="startEventBtn">Start</button>
+                                </form>
+                            </th>
+                            <% } else if (status == "In Progress") { %>
+                                <th scope="row" class="eventStatusIP"><%= status %></th>
+                            <% } else if (status == "Completed") { %>
+                                <th scope="row" class="eventStatusC"><%= status %></th>
+                            <% } else if (status == "Not Completed") { %>
+                                <th scope="row" class="eventStatusNC"><%= status %></th>
+                            <% } %>
+                            <td><%= date %></td>
+                            <td><%= time %></td>
+                            <td><%= durationEstimate %></td>
+                            <td><%= durationActual %></td>
+                            <td><%= assignedTo %></td>
+                            <td><%= nameWhole %></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+
+    </div><!-- /.container -->
+    <% include partials/template/events/scripts.ejs %>
+    <script>
+        $("#startEventBtn").click(function(e, data) {
+            $.ajax({
+                method: "PUT",
+                url: "/event/<%= eventId %>/update",
+                data: { 
+                    status: 'In Progress'        
+                }
+            })
+            .done(function( msg ) {
+                console.log('New event added.');
+                console.log(data);
+                window.location.href = '/event/<%= eventId %>';
+            })
+            .fail( function(xhr, textStatus, errorThrown) {
+                alert(xhr.responseText);
+            });
+        });
+    </script>
+</body>
+
+</html>

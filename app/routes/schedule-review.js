@@ -21,21 +21,6 @@ data.on('error', console.error.bind(console, 'MongoDB connection error:'));
 router.post('/schedule-review', function(req, res, next) {
     console.log(req.body);
 
-    /*const event = new Event({
-        //status: req.body.status,
-        recipe: req.body.mixRecipeSelect,
-        mixer: req.body.mixMixerSelect,
-        date: req.body.mixDateSelect,
-        time: req.body.mixTimeSelect,
-        notes: req.body.notes
-    });
-
-    console.log('ID is ' + event._id);
-    event.save().then(() => console.log('New Event Created.')).catch(err => console.log(err));
-
-    console.log(event._id);
-    const eventId = event._id;*/
-
     res.render('schedule-review', {
         nameWhole: req.body.mixRecipeSelect,
         mixer: req.body.mixMixerSelect,

@@ -21,14 +21,14 @@ data.on('error', console.error.bind(console, 'MongoDB connection error:'));
 router.post('/dashboard', function(req, res, next) {
     if (req.body.inputUsername == 'admin' && req.body.inputPassword == 'Lavi4800') {
         console.log(Recipes);
-        Recipes.find({}, function(err, recipes) {
-            res.render('dashboard', {
-                recipes: recipes,
+        Events.find({}, function(err, events) {
+            res.render('schedule', {
+                events: events,
                 pathToRoot: '/',
-                pageTitle: 'Dashboard',
-                pageID: 'dashboard'
+                pageTitle: 'Schedule',
+                pageID: 'schedule'
             });
-        });
+        });;
     } else {
         console.log('Incorrect username or password');
     }

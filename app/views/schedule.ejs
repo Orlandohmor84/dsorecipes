@@ -38,9 +38,9 @@
                             <% if (event.status == "Not Started") { %>
                             <th scope="row" class="eventStatusNS">
                                 <%= event.status %><br><br>
-                                <form>
-                                    <input type="hidden"></input>
-                                    <button type="submit" class="btn"><a href="">Start</a></button>
+                                <form action="/event/<%= event._id %>" method="PUT">
+                                    <input type="hidden" name="status" value="In Progress"></input>
+                                    <button type="submit" class="btn">Start</button>
                                 </form>
                             </th>
                             <% } else if (event.status == "In Progress") { %>
