@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Recipe = require('../models/recipes');
+const Formulas = require('../models/formulas');
 const Event = require('../models/events');
 
 //Set up default mongoose connection

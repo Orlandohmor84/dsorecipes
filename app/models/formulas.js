@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const RecipeSchema = new Schema({
+const FormulaSchema = new Schema({
     nameWhole : String,
+    category : String,
+    name : String,
+    flavor : String,
     imageURL : String,
     updated : String,
     approver : String,
@@ -119,4 +122,4 @@ const Recipe = mongoose.model('Recipe', RecipeSchema);
 module.exports = Recipe;
 // module.exports = 'Hello world';
 */
-module.exports =  mongoose.model('Recipe', RecipeSchema);
+module.exports =  mongoose.model('Formula', FormulaSchema);

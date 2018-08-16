@@ -19,18 +19,18 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Category</th>
+                            <th scope="col">Product</th>
                             <th scope="col">Name</th>
                             <th scope="col">Flavor</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <% recipes.forEach(function(recipe) { 
-                            if (recipe.category == '1UP') { %>
-                        <tr class="clickable-row" data-href="../recipe/<%= recipe._id %>">
-                            <th scope="row"><%= recipe.category %></th>
-                            <td><%= recipe.name %></td>
-                            <td><%= recipe.flavor %></td>
+                        <% formulas.forEach(function(formula) { 
+                            if (formula.category == '1UP') { %>
+                        <tr class="clickable-row" data-href="../recipe/<%= formula._id %>">
+                            <th scope="row"><%= formula.category %></th>
+                            <td><%= formula.name %></td>
+                            <td><%= formula.flavor %></td>
                         </tr>                    
                         <% }}); %>
                     </a>
@@ -48,12 +48,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <% recipes.forEach(function(recipe) { 
-                                if (recipe.category == 'Brandless') { %>
-                            <tr class="clickable-row" data-href="../recipe/<%= recipe._id %>">
-                                <th scope="row"><%= recipe.category %></th>
-                                <td><%= recipe.name %></td>
-                                <td><%= recipe.flavor %></td>
+                            <% formulas.forEach(function(formula) { 
+                                if (formula.category == 'Brandless') { %>
+                            <tr class="clickable-row" data-href="../recipe/<%= formula._id %>">
+                                <th scope="row"><%= formula.category %></th>
+                                <td><%= formula.name %></td>
+                                <td><%= formula.flavor %></td>
                             </tr>                    
                             <% }}); %>
                         </a>

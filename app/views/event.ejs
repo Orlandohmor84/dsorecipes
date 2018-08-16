@@ -32,7 +32,7 @@
                             <% if (status == "Not Started") { %>
                             <th scope="row" class="eventStatusNS">
                                 <%= status %><br><br>
-                                <form>
+                                <form action="event/<%= eventId %>" method="PUT">
                                     <input type="hidden" name="status" value="In Progress"></input>
                                     <button type="button" class="btn" id="startEventBtn">Start</button>
                                 </form>
@@ -60,10 +60,11 @@
     </div><!-- /.container -->
     <% include partials/template/events/scripts.ejs %>
     <script>
+        /*
         $("#startEventBtn").click(function(e, data) {
             $.ajax({
                 method: "PUT",
-                url: "/event/<%= eventId %>/update",
+                url: "/event/<%= eventId %>",
                 data: { 
                     status: 'In Progress'        
                 }
@@ -77,6 +78,7 @@
                 alert(xhr.responseText);
             });
         });
+        */
     </script>
 </body>
 

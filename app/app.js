@@ -1,11 +1,12 @@
 const express = require('express');
+const methodOverride = require('method-override');
 const reload = require('reload');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const modelRecipes = require('./models/recipes');
-const Recipe = modelRecipes.Recipe;
+const modelFormulas = require('./models/formulas');
+const Formula = modelFormulas.Formula;
 const app = express();
 
 //Set up default mongoose connection
@@ -30,6 +31,9 @@ app.set('view engine', 'ejs');
 app.set('views', 'app/views');
 
 app.locals.siteTitle = 'Doctors Scientific Organica Mix App';
+
+// override with POST having ?_method=PUT
+app.use(methodOverride('_method'));
 
 // for parsing application/json
 app.use(bodyParser.json()); 

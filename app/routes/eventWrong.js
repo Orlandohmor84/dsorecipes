@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const Events = require('../models/events');
-const Formulas = require('../models/formulas');
 
 //Set up default mongoose connection
 //let uri = 'mongodb://1:2@ds237989.mlab.com:37989/heroku_pv49n3mv';
@@ -18,15 +17,19 @@ let data = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
 data.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-router.get('/schedule-add', function(req, res, next) {
-    Recipes.find({}, function(err, recipes) {
-        res.render('schedule-add', {
-            recipes: recipes,
-            pathToRoot: '/',
-            pageTitle: 'Add to Schedule',
-            pageID: 'scheduleAdd'
-        });
-    });;
+router.put('/event/:eventId', function(req, res, next) {
+    
+    if(req.params.eventId == undefined || req.params.eventId == null || req.params.eventId == 'undefined') {
+        console.log('Having difficulties finding this event.');
+        res.redirect('/schedule');
+    } else {
+        const id = req.params.eventId;
+        console.log(id);
+        console.log('Request body is ' + req.body);
+        console.log(req.body);
+    }
+
+       
 });
 
 module.exports = router;

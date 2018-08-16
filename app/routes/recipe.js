@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Recipe = require('../models/recipes');
+const Formula = require('../models/formulas');
 const Event = require('../models/events');
 
 //Set up default mongoose connection
@@ -18,17 +18,17 @@ let data = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
 data.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-router.get('/recipe/:recipeId', (req, res, next) => {
+router.get('/recipe/:formulaId', (req, res, next) => {
     
-    if(req.params.recipeId == undefined || req.params.recipeId == null || req.params.recipeId == 'undefined') {
+    if(req.params.formulaId == undefined || req.params.formulaId == null || req.params.formulaId == 'undefined') {
         console.log('Having difficulties finding this recipe.');
         res.redirect('/schedule');
     } else {
-        console.log('Recipe ID found!!!!!!!!!!');
+        console.log('Formula ID found!!!!!!!!!!');
         //console.log(req.params);
-        const id = req.params.recipeId;
+        const id = req.params.formulaId;
         //console.log(id);
-        Recipe.findById(id)
+        Formula.findById(id)
             .exec()
             .then(doc => {
                 console.log('Running then method.');
@@ -36,7 +36,8 @@ router.get('/recipe/:recipeId', (req, res, next) => {
                 if (doc) {
                     console.log('Doc found!!!!!!!!!!');
                     res.render('recipe', {
-                        recipeId: doc._id,
+                        formulaId: doc._id,
+                        nameWhole: doc.nameWhole,
                         category: doc.category,
                         name: doc.name,
                         flavor: doc.flavor,

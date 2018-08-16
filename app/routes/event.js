@@ -66,49 +66,7 @@ router.get('/event/:eventId', function(req, res, next) {
 
 router.put('/event/:eventId/update', function(req, res, next) {
     
-    if(req.params.eventId == undefined || req.params.eventId == null || req.params.eventId == 'undefined') {
-        console.log('Having difficulties finding this event.');
-        res.redirect('/schedule');
-    } else {
-        const id = req.params.eventId;
-        console.log(id);
-        console.log('Request body is ' + req.body);
-        console.log(req.body);
-        Event.findById(id)
-            .exec()
-            .then(doc => {
-                console.log('Running then method.');
-                console.log('Database record', doc);
-                if (doc) {
-                    res.render('event', {
-                        eventId: doc._id,
-                        status: doc.status,
-                        date: doc.date,
-                        time: doc.time,
-                        durationEstimate: doc.durationEstimate,
-                        durationActual: doc.durationActual,
-                        assignedTo: doc.assignedTo,
-                        assignedFrom: doc.category,
-                        category: doc.category,
-                        name: doc.name,
-                        flavo: doc.flavor,
-                        nameWhole: doc.nameWhole,
-                        pathToRoot: '../../',
-                        pageTitle: 'Event',
-                        pageID: 'event'
-                    });
-                        
-                } else {
-                    res.status(400).json({ message: 'No record for id' });
-                }
-                    
-            })  
-        .catch(err => {
-            console.log('Event not found.');
-            console.log(err);
-            res.redirect('/404');
-        });
-    } 
+   
 });
 
 module.exports = router;
