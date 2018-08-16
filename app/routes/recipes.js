@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Formulas = require('../models/formulas');
+const Recipes = require('../models/recipes');
 const Events = require('../models/events');
 
 //Set up default mongoose connection
@@ -19,10 +19,10 @@ let data = mongoose.connection;
 data.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 router.get('/recipes', function(req, res, next) {
-    console.log(Formulas);
-    Formulas.find({}, function(err, formulas) {
+    console.log(Recipes);
+    Recipes.find({}, function(err, recipes) {
         res.render('recipes', {
-            formulas: formulas,
+            recipes: recipes,
             pathToRoot: '/',
             pageTitle: 'Recipes',
             pageID: 'recipes'

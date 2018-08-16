@@ -5,8 +5,8 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const modelFormulas = require('./models/formulas');
-const Formula = modelFormulas.Formula;
+const modelRecipes = require('./models/recipes');
+const Recipe = modelRecipes.Recipe;
 const app = express();
 
 //Set up default mongoose connection
