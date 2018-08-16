@@ -152,6 +152,7 @@
                     </tbody>
                 </table>
                 <% if (t02ing01name) { %>
+                    <h3>Table 2</h3>
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -285,6 +286,13 @@
                 <% } %>
             </div><!-- /.col -->
         </div><!-- /.row -->
+        <% if (notes) { %>
+        <div class="row notes">
+            <div class="col-xs-12">
+                <p><b>Notes:</b> <%= notes %></p>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <% } %>
     </div><!-- /.container -->
     <% include partials/template/recipes/scripts.ejs %>
 </body>

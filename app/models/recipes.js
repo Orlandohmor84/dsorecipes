@@ -10,6 +10,7 @@ const RecipeSchema = new Schema({
     updated : String,
     approver : String,
     yield : String,
+    notes : String,
     table01 : {
         ing01: {
             name : String, 

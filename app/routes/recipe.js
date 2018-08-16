@@ -45,6 +45,7 @@ router.get('/recipe/:recipeId', (req, res, next) => {
                         updated: doc.updated,
                         approver: doc.approver,
                         yield: doc.yield,
+                        notes: doc.notes,
                         t01ing01name: doc.table01.ing01.name,
                         t01ing01quant: doc.table01.ing01.quant,
                         t01ing01unit: doc.table01.ing01.unit,
