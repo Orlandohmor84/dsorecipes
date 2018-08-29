@@ -11,6 +11,7 @@
         <div class="row">
             <div class="col-xs-12 title">
                 <h1><%= pageTitle %></h1>
+                <h2><%= today %></h2>
             </div><!-- /.col -->
         </div><!-- /.row -->
         <div class="row ctaButtons">
@@ -26,8 +27,8 @@
                             <th scope="col">Status</th>
                             <th scope="col">Date</th>
                             <th scope="col">Time</th>
-                            <th scope="col">Dur<br>(est)</th>
-                            <th scope="col">Dur<br>(actual)</th>
+                            <!--<th scope="col">Dur<br>(est)</th>-->
+                            <!--<th scope="col">Dur<br>(actual)</th>-->
                             <th scope="col">Assigned To</th>
                             <th scope="col">Product</th>
                         </tr>
@@ -53,8 +54,8 @@
                                 <% } %>
                                 <td><%= event.date %></td>
                                 <td><%= event.time %></td>
-                                <td><%= event.durationEstimate %></td>
-                                <td><%= event.durationActual %></td>
+                                <!--<td><%= event.durationEstimate %></td>-->
+                                <!--<td><%= event.durationActual %></td>-->
                                 <td><%= event.assignedTo %></td>
                                 <td><%= event.nameWhole %></td>
                             </tr>

@@ -17,19 +17,25 @@ let data = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
 data.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+let getToday = function(){
+    let date = new Date();
+    console.log(date);
+    let m1 = date.getMonth() + 1;
+    if (m1 == 10 || m1 == 11 || m1 == 12) {
+        m= m1;
+    } else {
+        m = '0' + m1;
+    }
+    let d = date.getDate();
+    let y = date.getFullYear();
+    let today = y + "-" + m + "-" + d;
+    console.log(today);
+    return today;
+}
+
 router.get('/schedule', function(req, res, next) {
-        let date = new Date();
-        console.log(date);
-        let m1 = date.getMonth() + 1;
-        if (m1 == 10 || m1 == 11 || m1 == 12) {
-            m= m1;
-        } else {
-            m = '0' + m1;
-        }
-        let d = date.getDate();
-        let y = date.getFullYear();
-        let today = y + "-" + m + "-" + d;
-        console.log(today);
+    
+    let today = getToday();
     Events.find({}, function(err, events) {
         res.render('schedule', {
             events: events,
@@ -56,12 +62,14 @@ router.post('/schedule', function(req, res, next) {
     console.log(events._id);
     const eventsId = events._id;
     
+    let today = getToday();
     Events.find({}, function(err, events) {
         res.redirect(200, '/schedule', {
             events: events,
             pathToRoot: '/',
             pageTitle: 'Schedule',
-            pageID: 'schedule'
+            pageID: 'schedule',
+            today: today
         });
     });;
 });
