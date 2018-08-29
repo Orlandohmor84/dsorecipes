@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const EventSchema = new Schema({
     status: String,
-    date: Date,
+    date: String,
     time: String,
     durationEstimate: Number,
     durationActual: Number,

@@ -35,28 +35,30 @@
                     <tbody>
                         <% events.forEach(function(event) { %>
                         <tr>
-                            <% if (event.status == "Not Started") { %>
-                            <th scope="row" class="eventStatusNS">
-                                <%= event.status %><br><br>
-                                <form action="/event/<%= event._id %>?_method=PUT" method="POST">
-                                    <input type="hidden" name="status" value="In Progress"></input>
-                                    <button type="submit" class="btn">Start</button>
-                                </form>
-                            </th>
-                            <% } else if (event.status == "In Progress") { %>
-                                <th scope="row" class="eventStatusIP"><%= event.status %></th>
-                            <% } else if (event.status == "Completed") { %>
-                                <th scope="row" class="eventStatusC"><%= event.status %></th>
-                            <% } else if (event.status == "Not Completed") { %>
-                                <th scope="row" class="eventStatusNC"><%= event.status %></th>
+                            <% if (event.date == today) { %>
+                                <% if (event.status == "Not Started") { %>
+                                <th scope="row" class="eventStatusNS">
+                                    <%= event.status %><br><br>
+                                    <form action="/event/<%= event._id %>?_method=PUT" method="POST">
+                                        <input type="hidden" name="status" value="In Progress"></input>
+                                        <button type="submit" class="btn">Start</button>
+                                    </form>
+                                </th>
+                                <% } else if (event.status == "In Progress") { %>
+                                    <th scope="row" class="eventStatusIP"><%= event.status %></th>
+                                <% } else if (event.status == "Completed") { %>
+                                    <th scope="row" class="eventStatusC"><%= event.status %></th>
+                                <% } else if (event.status == "Not Completed") { %>
+                                    <th scope="row" class="eventStatusNC"><%= event.status %></th>
+                                <% } %>
+                                <td><%= event.date %></td>
+                                <td><%= event.time %></td>
+                                <td><%= event.durationEstimate %></td>
+                                <td><%= event.durationActual %></td>
+                                <td><%= event.assignedTo %></td>
+                                <td><%= event.nameWhole %></td>
+                            </tr>
                             <% } %>
-                            <td><%= event.date %></td>
-                            <td><%= event.time %></td>
-                            <td><%= event.durationEstimate %></td>
-                            <td><%= event.durationActual %></td>
-                            <td><%= event.assignedTo %></td>
-                            <td><%= event.nameWhole %></td>
-                        </tr>
                         <% }) %>
                         
                     </tbody>

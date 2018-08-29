@@ -18,12 +18,25 @@ let data = mongoose.connection;
 data.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 router.get('/schedule', function(req, res, next) {
+        let date = new Date();
+        console.log(date);
+        let m1 = date.getMonth() + 1;
+        if (m1 == 10 || m1 == 11 || m1 == 12) {
+            m= m1;
+        } else {
+            m = '0' + m1;
+        }
+        let d = date.getDate();
+        let y = date.getFullYear();
+        let today = y + "-" + m + "-" + d;
+        console.log(today);
     Events.find({}, function(err, events) {
         res.render('schedule', {
             events: events,
             pathToRoot: '/',
             pageTitle: 'Schedule',
-            pageID: 'schedule'
+            pageID: 'schedule',
+            today: today
         });
     });;
 });
@@ -33,7 +46,7 @@ router.post('/schedule', function(req, res, next) {
         status: 'Not Started',
         nameWhole: req.body.mixRecipeInput,
         assignedTo: req.body.mixMixerInput,
-        date: req.body.mixDateInputy,
+        date: req.body.mixDateInput,
         time: req.body.mixTimeInput,
         notes: req.body.notes
     });
