@@ -17,6 +17,22 @@ let data = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
 data.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+let getToday = function(){
+    let date = new Date();
+    console.log(date);
+    let m1 = date.getMonth() + 1;
+    if (m1 == 10 || m1 == 11 || m1 == 12) {
+        m= m1;
+    } else {
+        m = '0' + m1;
+    }
+    let d = date.getDate();
+    let y = date.getFullYear();
+    let today = y + "-" + m + "-" + d;
+    console.log(today);
+    return today;
+}
+
 router.get('/event/:eventId', function(req, res, next) {
     if(req.params.eventId == undefined || req.params.eventId == null || req.params.eventId == 'undefined') {
         console.log('Having difficulties finding this event.');
@@ -65,7 +81,29 @@ router.get('/event/:eventId', function(req, res, next) {
 });
 
 router.put('/event/:eventId/update', function(req, res, next) {
+    const id = req.params.eventId;
     
+    Events.update({ _id: id }, { $set: { status : req.body.status } })
+        .exec()
+        .then(result => {
+            console.log(result);
+            res.status(200).json(result);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({ error: err });
+        })
+    
+        let today = getToday();
+        Events.find({}, function(err, events) {
+            res.render('schedule-updated', {
+                events: events,
+                pathToRoot: '../../',
+                pageTitle: 'Schedule',
+                pageID: 'schedule',
+                today: today
+            });
+        });;
    
 });
 

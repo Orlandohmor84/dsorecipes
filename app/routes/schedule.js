@@ -32,6 +32,28 @@ let getToday = function(){
     console.log(today);
     return today;
 }
+/*
+let getTime =  function() {
+    let str = event.time;
+    console.log(str);
+    let res = str.substring(0, 2);
+    console.log(res);
+    let hourMilitary = parseInt(res, 10);
+    console.log(hourMilitary);
+    if (hourMilitary => 13) {
+        hour = hourMilitary - 12;
+        console.log(hour);
+    } else {
+        hour = res;
+        console.log(hour);
+    }
+    console.log(hour);
+    return hour;
+}
+getTime();
+console.log(hour);
+document.getElementById('time').innerHTML = hour;
+*/
 
 router.get('/schedule', function(req, res, next) {
     
