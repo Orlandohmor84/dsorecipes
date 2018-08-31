@@ -107,4 +107,31 @@ router.put('/event/:eventId/update', function(req, res, next) {
    
 });
 
+router.post('/event/:eventId/update', function(req, res, next) {
+    const id = req.params.eventId;
+    
+    Events.update({ _id: id }, { $set: { status : req.body.status } })
+        .exec()
+        .then(result => {
+            console.log(result);
+            res.status(200).json(result);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({ error: err });
+        })
+    
+        let today = getToday();
+        Events.find({}, function(err, events) {
+            res.render('schedule-updated', {
+                events: events,
+                pathToRoot: '../../',
+                pageTitle: 'Schedule',
+                pageID: 'schedule',
+                today: today
+            });
+        });;
+   
+});
+
 module.exports = router;

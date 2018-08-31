@@ -18,15 +18,32 @@ let data = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
 data.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+let getToday = function(){
+    let date = new Date();
+    console.log(date);
+    let m1 = date.getMonth() + 1;
+    if (m1 == 10 || m1 == 11 || m1 == 12) {
+        m= m1;
+    } else {
+        m = '0' + m1;
+    }
+    let d = date.getDate();
+    let y = date.getFullYear();
+    let today = y + "-" + m + "-" + d;
+    console.log(today);
+    return today;
+}
+
 router.post('/dashboard', function(req, res, next) {
     if (req.body.inputUsername == 'admin' && req.body.inputPassword == 'Lavi4800') {
-        console.log(Recipes);
+        let today = getToday();
         Events.find({}, function(err, events) {
             res.render('schedule', {
                 events: events,
                 pathToRoot: '/',
                 pageTitle: 'Schedule',
-                pageID: 'schedule'
+                pageID: 'schedule',
+                today: today
             });
         });;
     } else {
@@ -35,13 +52,14 @@ router.post('/dashboard', function(req, res, next) {
 });
 
 router.get('/dashboard', function(req, res, next) {
-    console.log(Recipes);
+    let today = getToday();
     Recipes.find({}, function(err, recipes) {
         res.render('dashboard', {
             recipes: recipes,
                 pathToRoot: '/',
                 pageTitle: 'Dashboard',
-                pageID: 'dashboard'
+                pageID: 'dashboard',
+                today: today
         });
     });
 });
