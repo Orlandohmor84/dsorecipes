@@ -33,8 +33,8 @@
                             <th scope="row" class="eventStatusNS">
                                 <%= status %><br><br>
                                 <form action="event/<%= eventId %>" method="PUT">
-                                    <input type="hidden" name="status" value="In Progress"></input>
-                                    <button type="button" class="btn" id="startEventBtn">Start</button>
+                                    <input type="hidden" name="status" value="In Progress">
+                                    <button type="submit" class="btn" id="startEventBtn">Start</button>
                                 </form>
                             </th>
                             <% } else if (status == "In Progress") { %>

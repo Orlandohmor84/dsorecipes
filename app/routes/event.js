@@ -93,17 +93,6 @@ router.put('/event/:eventId/update', function(req, res, next) {
             console.log(err);
             res.status(500).json({ error: err });
         })
-    
-        let today = getToday();
-        Events.find({}, function(err, events) {
-            res.render('schedule-updated', {
-                events: events,
-                pathToRoot: '../../',
-                pageTitle: 'Schedule',
-                pageID: 'schedule',
-                today: today
-            });
-        });;
    
 });
 
