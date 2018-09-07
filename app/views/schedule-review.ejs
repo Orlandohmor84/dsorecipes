@@ -20,28 +20,32 @@
                         <thead>
                             <tr>
                                 <th scope="col">Date</th>
-                                <th scope="col">Time</th>
-                                <th scope="col">Dur<br>(est)</th>
+                                <th scope="col">Start Time</th>
+                                <th scope="col">End Time</th>
                                 <th scope="col">Assigned To</th>
                                 <th scope="col">Product</th>
+                                <th scope="col">Amount</th>
                                 <th scope="col">Notes</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td id="mixDate"></td>
-                                <td id="mixTime"></td>
-                                <td></td>
+                                <td id="mixTimeStart"></td>
+                                <td id="mixTimeEnd"></td>
                                 <td id="mixMixer"></td>
                                 <td id="mixRecipe"></td>
+                                <td id="mixAmount"></td>
                                 <td id="mixNotes"></td>
                             </tr>
                         </tbody>
                     </table>
                     <input type="hidden" id="mixRecipeInput">
+                    <input type="hidden" id="mixRecipeAmount">
                     <input type="hidden" id="mixMixerInput">
                     <input type="hidden" id="mixDateInput">
-                    <input type="hidden" id="mixTimeInput">
+                    <input type="hidden" id="mixTimeStartInput">
+                    <input type="hidden" id="mixTimeEndInput">
                     <input type="hidden" id="mixNotesInput">
                     <button class="btn" id="createEventBtn" type="button">Submit</button>
                     <button class="btn" type="button"><a href="/schedule-add">Edit</a></button>
@@ -59,6 +63,11 @@
                 document.getElementById("mixRecipe").innerText = sessionStorage.mixRecipe;
                 document.getElementById("mixRecipeInput").value = sessionStorage.mixRecipe;
             }
+
+            if(sessionStorage.mixRecipe !== undefined) {
+                document.getElementById("mixAmount").innerText = sessionStorage.mixAmount;
+                document.getElementById("mixRecipeAmount").value = sessionStorage.mixAmount;
+            }
             
             if(sessionStorage.mixMixer !== undefined) {
                 document.getElementById("mixMixer").innerText = sessionStorage.mixMixer;
@@ -70,9 +79,14 @@
                 document.getElementById("mixDateInput").value = sessionStorage.mixDate;
             }
 
-            if(sessionStorage.mixTime !== undefined) {
-                document.getElementById("mixTime").innerText = sessionStorage.mixTime;
-                document.getElementById("mixTimeInput").value = sessionStorage.mixTime;
+            if(sessionStorage.mixTimeStart !== undefined) {
+                document.getElementById("mixTimeStart").innerText = sessionStorage.mixTimeStart;
+                document.getElementById("mixTimeStartInput").value = sessionStorage.mixTimeStart;
+            }
+
+            if(sessionStorage.mixTimeEnd !== undefined) {
+                document.getElementById("mixTimeEnd").innerText = sessionStorage.mixTimeEnd;
+                document.getElementById("mixTimeEndInput").value = sessionStorage.mixTimeEnd;
             }
 
             if(sessionStorage.mixNotes !== undefined) {
@@ -91,7 +105,8 @@
                     mixRecipeInput: $('#mixRecipeInput').val(),
                     mixMixerInput: $('#mixMixerInput').val(),
                     mixDateInput: $('#mixDateInput').val(),
-                    mixTimeInput: $('#mixTimeInput').val(),
+                    mixTimeStartInput: $('#mixTimeStartInput').val(),
+                    mixTimeEndInput: $('#mixTimeEndInput').val(),
                     mixNotesInput:  $('#mixNotesInput').val()           
                 }
             })

@@ -23,7 +23,10 @@
                     <% }) %>
                 </select>
             </div>
-            
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input class="form-control" type="text" id="mixAmount" name="mixAmount" oninput="sessionStorage.mixAmount=this.value;">
+            </div>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Assign Mixer</label>
                 <select class="form-control" id="mixMixerSelect" name="mixMixerSelect" oninput="sessionStorage.mixMixer=this.value;">
@@ -33,6 +36,8 @@
                     <option>Demetrius</option>
                     <option>Gregory</option>
                     <option>Phillip</option>
+                    <option>De'Armin</option>
+                    <option>Amanda</option>
                     <option>Other</option>
                 </select>
             </div>
@@ -41,9 +46,13 @@
                 <input class="form-control" type="date" id="mixDateSelect" name="mixDateSelect" oninput="sessionStorage.mixDate=this.value;">
             </div>
             <div class="form-group">
-                    <label for="mixTimeSelect">Select Time</label>
-                    <input class="form-control" type="time" id="mixTimeSelect" name="mixTimeSelect" oninput="sessionStorage.mixTime=this.value;">
-                </div>
+                <label for="mixTimeSelect">Select Start Time</label>
+                <input class="form-control" type="time" id="mixTimeStartSelect" name="mixTimeStartSelect" oninput="sessionStorage.mixTimeStart=this.value;">
+            </div>
+            <div class="form-group">
+                <label for="mixTimeSelect">Select End Time</label>
+                <input class="form-control" type="time" id="mixTimeEndSelect" name="mixTimeEndSelect" oninput="sessionStorage.mixTimeEnd=this.value;">
+            </div>
             <div class="form-group">
                 <label for="mixRecipeNotes">Notes</label>
                 <textarea class="form-control" id="mixRecipeNotes" name="mixRecipeNotes" rows="3" oninput="sessionStorage.mixNotes=this.value;"></textarea>

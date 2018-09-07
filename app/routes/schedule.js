@@ -26,7 +26,12 @@ let getToday = function(){
     } else {
         m = '0' + m1;
     }
-    let d = date.getDate();
+    let d1 = date.getDate();
+    if (d1 == 1 || d1 == 2 || d1 == 3 || d1 == 4 || d1 == 5 || d1 == 6 || d1 == 7 || d1 == 8 || d1 == 9){
+        d = '0' + d1;
+    } else {
+        d = d1;
+    }
     let y = date.getFullYear();
     let today = y + "-" + m + "-" + d;
     console.log(today);
@@ -75,7 +80,8 @@ router.post('/schedule', function(req, res, next) {
         nameWhole: req.body.mixRecipeInput,
         assignedTo: req.body.mixMixerInput,
         date: req.body.mixDateInput,
-        time: req.body.mixTimeInput,
+        timeStart: req.body.mixTimeStartInput,
+        timeEnd: req.body.mixTimeEndInput,
         notes: req.body.notes
     });
     console.log('ID is ' + events._id);

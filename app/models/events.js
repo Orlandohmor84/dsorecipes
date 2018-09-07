@@ -4,12 +4,14 @@ const Schema = mongoose.Schema;
 const EventSchema = new Schema({
     status: String,
     date: String,
-    time: String,
+    timeStart: String,
+    timeEnd: String,
     durationEstimate: Number,
     durationActual: Number,
     assignedTo: String,
     assignedFrom: String,
-    nameWhole : String
+    nameWhole : String,
+    amount: String
 });
 /*
 // the schema is useless so far
