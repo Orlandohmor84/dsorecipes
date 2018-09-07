@@ -37,6 +37,44 @@ let getToday = function(){
     console.log(today);
     return today;
 }
+
+let getDayNum1 = function(){
+    Date.prototype.getDOY = function() {
+        var onejan = new Date(this.getFullYear(),0,1);
+        return Math.ceil((this - onejan) / 86400000);
+    }
+    let today = new Date();
+    let dayNum1 = today.getDOY();
+    console.log('DayNum1 below.');
+    console.log(dayNum1);
+    return dayNum1;
+}
+let getDayNum2 = function(){
+    Date.prototype.getDOY = function() {
+        var onejan = new Date(this.getFullYear(),0,1);
+        return Math.ceil((this - onejan) / 86400000);
+    }
+    let today = new Date();
+    let dayNum1 = today.getDOY();
+    let dayNum2 = dayNum1 + 1;
+    console.log('Daynum2 below.');
+    console.log(dayNum2);
+    return dayNum2;
+}
+
+let getDayNum3 = function(){
+    Date.prototype.getDOY = function() {
+        var onejan = new Date(this.getFullYear(),0,1);
+        return Math.ceil((this - onejan) / 86400000);
+    }
+    let today = new Date();
+    let dayNum1 = today.getDOY();
+    let dayNum3 = dayNum1 + 2;
+    console.log('Daynum3 below.');
+    console.log(dayNum3);
+    return dayNum3;
+}
+
 /*
 let getTime =  function() {
     let str = event.time;
@@ -63,13 +101,41 @@ document.getElementById('time').innerHTML = hour;
 router.get('/schedule', function(req, res, next) {
     
     let today = getToday();
+    let dayNum1 = getDayNum1();
+    let dayNum2 = getDayNum2();
+    let dayNum3 = getDayNum3();
+    let tomorrow = dayNum2;
+    console.log('dayNum2 is ' + dayNum2);
+    let dayDate2;
+    let formatDate2 = function() {
+        if (tomorrow == 251) {
+            dayDate2 == '09-08-2018';
+            return dayDate2;
+        } else if (tomorrow == 252) {
+            dayDate2 == '09-09-2018';
+            return dayDate2;
+        } else if (tomorrow == 253) {
+            dayDate2 == '09-10-2018';
+            return dayDate2;
+        }   
+    }
+    let day2 = formatDate2();
+    console.log('day2 below');
+    console.log(day2);
     Events.find({}, function(err, events) {
         res.render('schedule', {
             events: events,
             pathToRoot: '/',
             pageTitle: 'Schedule',
             pageID: 'schedule',
-            today: today
+            today: today,
+            dayNum1: dayNum1,
+            dayNum2: dayNum2,
+            dayNum3: dayNum3,
+            //dayNum4: dayNum4,
+            //dayNum5: dayNum5,
+            //dayNum6: dayNum6,
+            //dayNum7: dayNum7
         });
     });;
 });

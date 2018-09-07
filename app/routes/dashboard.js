@@ -39,6 +39,18 @@ let getToday = function(){
     return today;
 }
 
+let getdayNumber1 = function(){
+    Date.prototype.getDOY = function() {
+        var onejan = new Date(this.getFullYear(),0,1);
+        return Math.ceil((this - onejan) / 86400000);
+    }
+    let today = new Date();
+    let daynum = today.getDOY();
+    console.log('Daynum below.');
+    console.log(daynum);
+    return daynum1;
+}
+
 router.post('/dashboard', function(req, res, next) {
     if (req.body.inputUsername == 'admin' && req.body.inputPassword == 'Lavi4800') {
         let today = getToday();
@@ -64,7 +76,8 @@ router.get('/dashboard', function(req, res, next) {
                 pathToRoot: '/',
                 pageTitle: 'Dashboard',
                 pageID: 'dashboard',
-                today: today
+                today: today,
+                todayNum: todayNum
         });
     });
 });

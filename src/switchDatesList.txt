@@ -1,0 +1,242 @@
+let tomorrow = dayNum2;
+switch (dayNum2) {
+    case 0 : dateFormatted == '01-01-2018';
+    console.log('dateFormatted is 0');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 251');
+    return dateFormatted;
+    break;
+
+    case 252 :  dateFormatted == '09-09-2018';
+    console.log('dateFormatted is 252');
+    return dateFormatted;
+    break;
+
+    case 253 : dateFormatted == '09-10-2018';
+    console.log('dateFormatted is 253');
+    return dateFormatted;
+    break;
+
+    case 254 :  dateFormatted == '09-11-2018';
+    console.log('dateFormatted is 254');
+    return dateFormatted;
+    break;
+
+    case 255 :  dateFormatted == '09-12-2018';
+    console.log('dateFormatted is 255');
+    return dateFormatted;
+    break;
+
+    case 256 : dateFormatted == '09-13-2018';
+    console.log('dateFormatted is 256');
+    return dateFormatted;
+    break;
+
+    case 257 :  dateFormatted == '09-14-2018';
+    console.log('dateFormatted is 257');
+    return dateFormatted;
+    break;
+
+    case 258 :  dateFormatted == '09-15-2018';
+    console.log('dateFormatted is 258');
+    return dateFormatted;
+    break;
+
+    case 259 : dateFormatted == '09-15-2018';
+    console.log('dateFormatted is 259');
+    return dateFormatted;
+    break;
+
+    case 260 :  dateFormatted == '09-16-2018';
+    console.log('dateFormatted is 260');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 0 : dateFormatted == '01-01-2018';
+    console.log('dateFormatted is 0');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 0 : dateFormatted == '01-01-2018';
+    console.log('dateFormatted is 0');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 0 : dateFormatted == '01-01-2018';
+    console.log('dateFormatted is 0');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 0 : dateFormatted == '01-01-2018';
+    console.log('dateFormatted is 0');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 0 : dateFormatted == '01-01-2018';
+    console.log('dateFormatted is 0');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 0 : dateFormatted == '01-01-2018';
+    console.log('dateFormatted is 0');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 0 : dateFormatted == '01-01-2018';
+    console.log('dateFormatted is 0');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 0 : dateFormatted == '01-01-2018';
+    console.log('dateFormatted is 0');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 0 : dateFormatted == '01-01-2018';
+    console.log('dateFormatted is 0');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 0 : dateFormatted == '01-01-2018';
+    console.log('dateFormatted is 0');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 0 : dateFormatted == '01-01-2018';
+    console.log('dateFormatted is 0');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 0 : dateFormatted == '01-01-2018';
+    console.log('dateFormatted is 0');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+
+    case 251 :  dateFormatted == '09-08-2018';
+    console.log('dateFormatted is 250');
+    return dateFormatted;
+    break;
+}

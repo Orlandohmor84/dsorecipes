@@ -3,6 +3,45 @@
 
 <head>
     <% include partials/template/head.ejs %>
+    <script>
+        function sortTable() {
+            var table, rows, switching, i, x, y, shouldSwitch;
+            table = document.getElementById("scheduleTable");
+            switching = true;
+            /*Make a loop that will continue until
+            no switching has been done:*/
+            while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                //start by saying there should be no switching:
+                shouldSwitch = false;
+                /*Get the two elements you want to compare,
+                one from current row and one from the next:*/
+                x = rows[i].getElementsByTagName("TD")[1];
+                y = rows[i + 1].getElementsByTagName("TD")[1];
+                //check if the two rows should switch place:
+                if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                    //if so, mark as a switch and break the loop:
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+            if (shouldSwitch) {
+            /*If a switch has been marked, make the switch
+            and mark that a switch has been done:*/
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            }
+        }
+    }
+    $(document).ready(function(){
+        sortTable();
+    });
+    </script>
 </head>
 
 <body id="<%= pageID %>">
@@ -11,7 +50,6 @@
         <div class="row">
             <div class="col-xs-12 title">
                 <h1><%= pageTitle %></h1>
-                <h2><%= today %></h2>
             </div><!-- /.col -->
         </div><!-- /.row -->
         <div class="row ctaButtons">
@@ -21,7 +59,7 @@
         </div><!-- /.row -->
         <div class="row">
             <div class="col-xs-12 table-responsive">
-                <table class="table table-striped"  style="text-align:center;">
+                <table class="table table-striped"  id="scheduleTable" style="text-align:center;">
                     <thead>
                         <tr>
                             <th scope="col">Status</th>
@@ -37,7 +75,7 @@
                     <tbody>
                         <% events.forEach(function(event) { %>
                         <tr>
-                            <% if (event.date == today) { %>
+
                                 <% if (event.status == "Not Started") { %>
                                 <th scope="row" class="eventStatusNS">
                                     <%= event.status %><br><br>
@@ -62,7 +100,7 @@
                                 <td><%= event.assignedTo %></td>
                                 <td><%= event.nameWhole %></td>
                             </tr>
-                            <% } %>
+           
                         <% }) %>
                         
                     </tbody>
