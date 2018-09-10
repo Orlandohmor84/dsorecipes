@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/template/head.ejs %>
+
+    <style>
+        .scheduleGroup {
+            width: 800px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body id="<%= pageID %>">
+        <% include partials/template/header.ejs %>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 title">
+                <h1><%= pageTitle %></h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+
+    
+        
+
+    
+        <div class="row ctaButtons">
+            <div class="col-xs-12">
+                <button type="button" class="btn"><a href="/dep-mix-schedule-add">Add to Schedule</a></button>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="row">
+            <div class="col-xs-12 table-responsive">
+                <table class="table table-striped"  id="scheduleTable" style="text-align:center;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Status</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Start Time</th>
+                            <th scope="col">End Time</th>
+                            <!--<th scope="col">Dur<br>(est)</th>-->
+                            <!--<th scope="col">Dur<br>(actual)</th>-->
+                            <th scope="col">Assigned To</th>
+                            <th scope="col">Product</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% events.forEach(function(event) { %>
+                            <% if (event.date == today) { %>
+                        <tr>
+
+                                <% if (event.status == "Not Started") { %>
+                                <th scope="row" class="eventStatusNS">
+                                    <%= event.status %><br><br>
+                                    <form action="/event/<%= event._id %>/update" method="PUT">
+                                        <input type="hidden" name="status" value="In Progress"></input>
+                                        <button type="submit" class="btn">Start</button>
+                                    </form>
+                                </th>
+                                <% } else if (event.status == "In Progress") { %>
+                                    <th scope="row" class="eventStatusIP"><%= event.status %></th>
+                                <% } else if (event.status == "Completed") { %>
+                                    <th scope="row" class="eventStatusC"><%= event.status %></th>
+                                <% } else if (event.status == "Not Completed") { %>
+                                    <th scope="row" class="eventStatusNC"><%= event.status %></th>
+                                <% } %>
+                                <td><%= event.date %></td>
+                                
+                                <td id="timeStart"><%= event.timeStart %></td>
+                                <td id="timeEnd"><%= event.timeEnd %></td>
+                                <!--<td><%= event.durationEstimate %></td>-->
+                                <!--<td><%= event.durationActual %></td>-->
+                                <td><%= event.assignedTo %></td>
+                                <td><%= event.nameWhole %></td>
+                            </tr>
+
+                            
+           
+                        <% }}) %>
+                        
+                    </tbody>
+                </table>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+
+    </div><!-- /.container -->
+    <% include partials/template/scripts.ejs %>
+</body>
+
+</html>

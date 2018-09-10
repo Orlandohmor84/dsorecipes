@@ -55,12 +55,13 @@ router.post('/dashboard', function(req, res, next) {
     if (req.body.inputUsername == 'admin' && req.body.inputPassword == 'Lavi4800') {
         let today = getToday();
         Events.find({}, function(err, events) {
-            res.render('schedule', {
+            res.render('dashboard', {
                 events: events,
                 pathToRoot: '/',
-                pageTitle: 'Schedule',
-                pageID: 'schedule',
+                pageTitle: 'Dashboard',
+                pageID: 'dashboard',
                 today: today
+                //todayNum: todayNum
             });
         });;
     } else {
@@ -76,8 +77,8 @@ router.get('/dashboard', function(req, res, next) {
                 pathToRoot: '/',
                 pageTitle: 'Dashboard',
                 pageID: 'dashboard',
-                today: today,
-                todayNum: todayNum
+                today: today
+                //todayNum: todayNum
         });
     });
 });
