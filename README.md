@@ -17,5 +17,6 @@
 
 ### Releases ###
 
+* v1.0.2 - 09/11/18 - Resized Schedule Table.
 * v1.0.1 - 09/11/18 - Added Amount to Mixing Schedule Table.
 * v1.0.0 - 09/10/18 - Initial Release. Mixing Schedule.
