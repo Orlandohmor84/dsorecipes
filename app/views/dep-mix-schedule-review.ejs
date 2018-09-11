@@ -41,7 +41,7 @@
                         </tbody>
                     </table>
                     <input type="hidden" id="mixRecipeInput">
-                    <input type="hidden" id="mixRecipeAmount">
+                    <input type="hidden" id="mixAmountInput">
                     <input type="hidden" id="mixMixerInput">
                     <input type="hidden" id="mixDateInput">
                     <input type="hidden" id="mixTimeStartInput">
@@ -64,9 +64,9 @@
                 document.getElementById("mixRecipeInput").value = sessionStorage.mixRecipe;
             }
 
-            if(sessionStorage.mixRecipe !== undefined) {
+            if(sessionStorage.mixAmount !== undefined) {
                 document.getElementById("mixAmount").innerText = sessionStorage.mixAmount;
-                document.getElementById("mixRecipeAmount").value = sessionStorage.mixAmount;
+                document.getElementById("mixAmountInput").value = sessionStorage.mixAmount;
             }
             
             if(sessionStorage.mixMixer !== undefined) {
@@ -103,6 +103,7 @@
                 url: "/dep-mix",
                 data: { 
                     mixRecipeInput: $('#mixRecipeInput').val(),
+                    mixAmountInput: $('#mixAmountInput').val(),
                     mixMixerInput: $('#mixMixerInput').val(),
                     mixDateInput: $('#mixDateInput').val(),
                     mixTimeStartInput: $('#mixTimeStartInput').val(),
