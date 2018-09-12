@@ -3,7 +3,7 @@
 ## What is this repository for ##
 
 * Doctors Scientific Organica - Production Web App
-* Version 1.0
+* Version 1.1
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
 ### How do I get set up ###
@@ -17,6 +17,7 @@
 
 ### Releases ###
 
+* v1.1.0 - 09/12/18 - Main Production Line Schedule.
 * v1.0.3 - 09/11/18 - Remove auto-refresh from form views.
 * v1.0.2 - 09/11/18 - Resized Schedule Table.
 * v1.0.1 - 09/11/18 - Added Amount to Mixing Schedule Table.

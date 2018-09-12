@@ -55,6 +55,9 @@ app.use(require('./routes/event'));
 app.use(require('./routes/dep-mix'));
 app.use(require('./routes/dep-mix-schedule-add'));
 app.use(require('./routes/dep-mix-schedule-review'));
+app.use(require('./routes/dep-prod-main'));
+app.use(require('./routes/dep-prod-main-schedule-add'));
+app.use(require('./routes/dep-prod-main-schedule-review'));
 app.use(require('./routes/404'));
 
 app.get('/robots.txt', function (req, res) {

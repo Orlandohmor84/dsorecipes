@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/template/head-norefresh.ejs %>
+</head>
+
+<body id="<%= pageID %>">
+        <% include partials/template/header.ejs %>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 title">
+                <h1><%= pageTitle %></h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <form method="POST" action="/dep-prod-main-schedule-review">
+            <div class="form-group">
+                <label for="prodMainProductSelect">Select Product</label>
+                <select class="form-control" id="prodMainProductSelect" name="prodMainProductSelect" oninput="sessionStorage.prodMainProduct=this.value;">
+                    <option value="">(select one)</option>
+                    <% recipes.forEach(function(recipe) { %>
+                    <option><%= recipe.nameWhole %></option>
+                    <% }) %>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="prodMainAmount">Amount</label>
+                <input class="form-control" type="text" id="prodMainAmount" name="prodMainAmount" oninput="sessionStorage.prodMainAmount=this.value;">
+            </div>
+            <div class="form-group">
+                <label for="prodMainDateSelect">Select Date</label>
+                <input class="form-control" type="date" id="prodMainDateSelect" name="prodMainDateSelect" oninput="sessionStorage.prodMainDate=this.value;">
+            </div>
+            <div class="form-group">
+                <label for="prodMainTimeSelect">Select Start Time</label>
+                <input class="form-control" type="time" id="prodMainTimeStartSelect" name="prodMainTimeStartSelect" oninput="sessionStorage.prodMainTimeStart=this.value;">
+            </div>
+            <div class="form-group">
+                <label for="prodMainTimeSelect">Select End Time</label>
+                <input class="form-control" type="time" id="prodMainTimeEndSelect" name="prodMainTimeEndSelect" oninput="sessionStorage.prodMainTimeEnd=this.value;">
+            </div>
+            <div class="form-group">
+                <label for="prodMainRecipeNotes">Notes</label>
+                <textarea class="form-control" id="prodMainNotes" name="prodMainNotes" rows="3" oninput="sessionStorage.prodMainNotes=this.value;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div><!-- /.container -->
+    <% include partials/template/scripts.ejs %>
+</body>
+
+</html>

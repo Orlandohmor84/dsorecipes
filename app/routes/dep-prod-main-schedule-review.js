@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const EventsProdMain = require('../models/events-prod-main');
+const Events = require('../models/events');
 const Recipes = require('../models/recipes');
 
 //Set up default mongoose connection
@@ -18,15 +18,20 @@ let data = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
 data.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-router.get('/dep-mix-schedule-add', function(req, res, next) {
-    Recipes.find({}, function(err, recipes) {
-        res.render('dep-mix-schedule-add', {
-            recipes: recipes,
-            pathToRoot: '/',
-            pageTitle: 'Add to Schedule',
-            pageID: 'scheduleAdd'
-        });
-    });;
+router.post('/dep-prod-main-schedule-review', function(req, res, next) {
+    console.log(req.body);
+
+    res.render('dep-prod-main-schedule-review', {
+        nameWhole: req.body.mixRecipeSelect,
+        mixer: req.body.mixMixerSelect,
+        date: req.body.mixDateSelect,
+        time: req.body.mixTimeSelect,
+        amount: req.body.mixAmount,
+        notes: req.body.notes,
+        pathToRoot: '/',
+        pageTitle: 'Review Schedule Addition',
+        pageID: 'scheduleAddReview'
+    });
 });
 
 module.exports = router;

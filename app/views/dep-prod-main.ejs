@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/template/head.ejs %>
+
+    <style>
+        .scheduleGroup {
+            width: 800px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body id="<%= pageID %>">
+        <% include partials/template/header.ejs %>
+    <div class="container-fluid">
+        <div class="row title">
+            <div class="col-xs-6">
+                <h1><%= pageTitle %></h1>
+            </div><!-- /.ol -->
+            <div class="col-xs-6 ctaButtons">
+                <button type="button" class="btn"><a href="/dep-prod-main-schedule-add">Add to Schedule</a></button>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+
+        <div class="row">
+            <div class="col-xs-12 table-responsive">
+                <table class="table table-striped table-sm"  id="scheduleTable" style="text-align:center;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Start Time</th>
+                            <th scope="col">End Time</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Product</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% eventsProdMain.forEach(function(event) { %>
+                            <% if (event.date == today) { %>
+                            <tr>
+                                <td><%= event.date %></td>
+                                <td id="timeStart"><%= event.timeStart %></td>
+                                <td id="timeEnd"><%= event.timeEnd %></td>
+                                <td><%= event.amount %></td>
+                                <td><%= event.nameWhole %></td>
+                            </tr>
+                        <% }}) %>
+                        
+                    </tbody>
+                </table>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+
+    </div><!-- /.container -->
+    <% include partials/template/scripts.ejs %>
+</body>
+
+</html>

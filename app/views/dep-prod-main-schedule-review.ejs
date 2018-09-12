@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/template/head-norefresh.ejs %>
+</head>
+
+<body id="<%= pageID %>">
+        <% include partials/template/header.ejs %>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 title">
+                <h1><%= pageTitle %></h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="row">
+            <div class="col-xs-12">
+                <form id="createEvent">
+                    <table class="table table-striped"  style="text-align:center;">
+                        <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">Start Time</th>
+                                <th scope="col">End Time</th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="prodMainDate"></td>
+                                <td id="prodMainTimeStart"></td>
+                                <td id="prodMainTimeEnd"></td>
+                                <td id="prodMainProduct"></td>
+                                <td id="prodMainAmount"></td>
+                                <td id="prodMainNotes"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type="hidden" id="prodMainProductInput">
+                    <input type="hidden" id="prodMainAmountInput">
+                    <input type="hidden" id="prodMainDateInput">
+                    <input type="hidden" id="prodMainTimeStartInput">
+                    <input type="hidden" id="prodMainTimeEndInput">
+                    <input type="hidden" id="prodMainNotesInput">
+                    <button class="btn" id="createEventBtn" type="button">Submit</button>
+                    <button class="btn" type="button"><a href="/dep-prod-main-schedule-add">Edit</a></button>
+                </form>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+
+    </div><!-- /.container -->
+    <% include partials/template/scripts.ejs %>
+    <script>
+        const reviewData = function() {
+            console.log('reviewMixData function starting.');
+
+            if(sessionStorage.prodMainProduct !== undefined) {
+                document.getElementById("prodMainProduct").innerText = sessionStorage.prodMainProduct;
+                document.getElementById("prodMainProductInput").value = sessionStorage.prodMainProduct;
+            }
+
+            if(sessionStorage.prodMainAmount !== undefined) {
+                document.getElementById("prodMainAmount").innerText = sessionStorage.prodMainAmount;
+                document.getElementById("prodMainAmountInput").value = sessionStorage.prodMainAmount;
+            }
+
+            if(sessionStorage.prodMainDate !== undefined) {
+                document.getElementById("prodMainDate").innerText = sessionStorage.prodMainDate;
+                document.getElementById("prodMainDateInput").value = sessionStorage.prodMainDate;
+            }
+
+            if(sessionStorage.prodMainTimeStart !== undefined) {
+                document.getElementById("prodMainTimeStart").innerText = sessionStorage.prodMainTimeStart;
+                document.getElementById("prodMainTimeStartInput").value = sessionStorage.prodMainTimeStart;
+            }
+
+            if(sessionStorage.prodMainTimeEnd !== undefined) {
+                document.getElementById("prodMainTimeEnd").innerText = sessionStorage.prodMainTimeEnd;
+                document.getElementById("prodMainTimeEndInput").value = sessionStorage.prodMainTimeEnd;
+            }
+
+            if(sessionStorage.prodMainNotes !== undefined) {
+                document.getElementById("prodMainNotes").innerText = sessionStorage.prodMainNotes;
+                document.getElementById("prodMainNotesInput").value = sessionStorage.prodMainNotes;
+            }
+        };
+        $(document).ready(function() {
+            reviewData();
+        });
+        $("#createEventBtn").click(function(e, data) {
+            $.ajax({
+                method: "POST",
+                url: "/dep-prod-main",
+                data: { 
+                    prodMainProductInput: $('#prodMainProductInput').val(),
+                    prodMainAmountInput: $('#prodMainAmountInput').val(),
+                    prodMainDateInput: $('#prodMainDateInput').val(),
+                    prodMainTimeStartInput: $('#prodMainTimeStartInput').val(),
+                    prodMainTimeEndInput: $('#prodMainTimeEndInput').val(),
+                    prodMainNotesInput:  $('#prodMainNotesInput').val()           
+                }
+            })
+            .done(function( msg ) {
+                console.log('New event added.');
+                console.log(data);
+                window.location.href = '/dep-prod-main';
+            })
+            .fail( function(xhr, textStatus, errorThrown) {
+                alert(xhr.responseText);
+            });
+        });
+    </script>
+</body>
+
+</html>
