@@ -8,7 +8,7 @@
 
 ### How do I get set up ###
 
-* Git clone git clone [https://bitbucket.org/sfldso/mixapp.git](git clone https://bitbucket.org/sfldso/mixapp/src.git)
+* Git clone git clone [https://bitbucket.org/sfldso/mixapp.git](https://bitbucket.org/sfldso/mixapp/src.git)
 * Not sure yet
 
 ### Who do I talk to ###
