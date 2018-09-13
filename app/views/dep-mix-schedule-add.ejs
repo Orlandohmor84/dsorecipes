@@ -3,6 +3,12 @@
 
 <head>
     <% include partials/template/head-norefresh.ejs %>
+
+    <style>
+        #mixMixerOtherWrapper {
+            display: none;
+        }
+    </style>
 </head>
 
 <body id="<%= pageID %>">
@@ -41,6 +47,10 @@
                     <option>Other</option>
                 </select>
             </div>
+            <div class="form-group" id="mixMixerOtherWrapper">
+                <label for="mixMixerOther">Mixer Name</label>
+                <input class="form-control" type="text" id="mixMixerOther" name="mixMixerOther" oninput="sessionStorage.mixTimeEnd=this.value;">
+            </div>
             <div class="form-group">
                 <label for="mixDateSelect">Select Date</label>
                 <input class="form-control" type="date" id="mixDateSelect" name="mixDateSelect" oninput="sessionStorage.mixDate=this.value;">
@@ -61,6 +71,19 @@
         </form>
     </div><!-- /.container -->
     <% include partials/template/scripts.ejs %>
+
+    <script>
+            $('#mixMixerSelect').change(function(){
+                console.log('Mixer changed.');
+                if ($('#mixMixerSelect').val() == 'Other'){
+                    console.log('Other mixer selected.');
+                    $('#mixMixerOtherWrapper').fadeIn();
+                } else {
+                    console.log('Mixer selected from dropdown.');
+                    $('#mixMixerOtherWrapper').hide();
+                }
+            }) 
+    </script>
 </body>
 
 </html>
