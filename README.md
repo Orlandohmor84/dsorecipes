@@ -17,6 +17,7 @@
 
 ### Releases ###
 
+* v1.1.2 - 09/13/18 - Add other option w/ input box for products.
 * v1.1.1 - 09/13/18 - Other option for assigning mixers.
 * v1.1.0 - 09/12/18 - Main Production Line Schedule.
 * v1.0.3 - 09/11/18 - Remove auto-refresh from form views.

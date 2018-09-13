@@ -3,6 +3,12 @@
 
 <head>
     <% include partials/template/head-norefresh.ejs %>
+
+    <style>
+        #mixRecipeOtherWrapper {
+            display: none;
+        }
+    </style>
 </head>
 
 <body id="<%= pageID %>">
@@ -18,10 +24,15 @@
                 <label for="prodMainProductSelect">Select Product</label>
                 <select class="form-control" id="prodMainProductSelect" name="prodMainProductSelect" oninput="sessionStorage.prodMainProduct=this.value;">
                     <option value="">(select one)</option>
+                    <option>Other</option>
                     <% recipes.forEach(function(recipe) { %>
                     <option><%= recipe.nameWhole %></option>
                     <% }) %>
                 </select>
+            </div>
+            <div class="form-group" id="prodMainProductOtherWrapper">
+                <label for="prodMainProductOther">Recipe Name</label>
+                <input class="form-control" type="text" id="prodMainProductOther" name="prodMainProductOther" oninput="sessionStorage.prodMainProduct=this.value;">
             </div>
             <div class="form-group">
                 <label for="prodMainAmount">Amount</label>
@@ -47,6 +58,19 @@
         </form>
     </div><!-- /.container -->
     <% include partials/template/scripts.ejs %>
+
+    <script>
+        $('#prodMainProductSelect').change(function(){
+            console.log('Product changed.');
+            if ($('#prodMainProductSelect').val() == 'Other'){
+                console.log('Other product selected.');
+                $('#prodMainProductOtherWrapper').fadeIn();
+            } else {
+                console.log('Product selected from dropdown.');
+                $('#prodMainProductOtherWrapper').hide();
+            }
+        });
+    </script>
 </body>
 
 </html>

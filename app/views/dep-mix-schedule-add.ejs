@@ -5,7 +5,7 @@
     <% include partials/template/head-norefresh.ejs %>
 
     <style>
-        #mixMixerOtherWrapper {
+        #mixRecipeOtherWrapper, #mixMixerOtherWrapper {
             display: none;
         }
     </style>
@@ -24,10 +24,15 @@
                 <label for="mixRecipeSelect">Select Recipe</label>
                 <select class="form-control" id="mixRecipeSelect" name="mixRecipeSelect" oninput="sessionStorage.mixRecipe=this.value;">
                     <option value="">(select one)</option>
+                    <option>Other</option>
                     <% recipes.forEach(function(recipe) { %>
                     <option><%= recipe.nameWhole %></option>
                     <% }) %>
                 </select>
+            </div>
+            <div class="form-group" id="mixRecipeOtherWrapper">
+                <label for="mixRecipeOther">Recipe Name</label>
+                <input class="form-control" type="text" id="mixRecipeOther" name="mixRecipeOther" oninput="sessionStorage.mixRecipe=this.value;">
             </div>
             <div class="form-group">
                 <label for="amount">Amount</label>
@@ -37,19 +42,20 @@
                 <label for="exampleFormControlSelect1">Assign Mixer</label>
                 <select class="form-control" id="mixMixerSelect" name="mixMixerSelect" oninput="sessionStorage.mixMixer=this.value;">
                     <option value="">(select one)</option>
-                    <option>Eric</option>
-                    <option>Rolayne</option>
+                    <option>Amanda</option>
+                    <option>Andre</option>
+                    <option>De'Armin</option>
                     <option>Demetrius</option>
+                    <option>Eric</option>
                     <option>Gregory</option>
                     <option>Phillip</option>
-                    <option>De'Armin</option>
-                    <option>Amanda</option>
+                    <option>Rolayne</option>
                     <option>Other</option>
                 </select>
             </div>
             <div class="form-group" id="mixMixerOtherWrapper">
                 <label for="mixMixerOther">Mixer Name</label>
-                <input class="form-control" type="text" id="mixMixerOther" name="mixMixerOther" oninput="sessionStorage.mixTimeEnd=this.value;">
+                <input class="form-control" type="text" id="mixMixerOther" name="mixMixerOther" oninput="sessionStorage.mixMixer=this.value;">
             </div>
             <div class="form-group">
                 <label for="mixDateSelect">Select Date</label>
@@ -73,16 +79,27 @@
     <% include partials/template/scripts.ejs %>
 
     <script>
-            $('#mixMixerSelect').change(function(){
-                console.log('Mixer changed.');
-                if ($('#mixMixerSelect').val() == 'Other'){
-                    console.log('Other mixer selected.');
-                    $('#mixMixerOtherWrapper').fadeIn();
-                } else {
-                    console.log('Mixer selected from dropdown.');
-                    $('#mixMixerOtherWrapper').hide();
-                }
-            }) 
+        $('#mixMixerSelect').change(function(){
+            console.log('Mixer changed.');
+            if ($('#mixMixerSelect').val() == 'Other'){
+                console.log('Other mixer selected.');
+                $('#mixMixerOtherWrapper').fadeIn();
+            } else {
+                console.log('Mixer selected from dropdown.');
+                $('#mixMixerOtherWrapper').hide();
+            }
+        });
+
+        $('#mixRecipeSelect').change(function(){
+            console.log('Recipe changed.');
+            if ($('#mixRecipeSelect').val() == 'Other'){
+                console.log('Other recipe selected.');
+                $('#mixRecipeOtherWrapper').fadeIn();
+            } else {
+                console.log('Mixer selected from dropdown.');
+                $('#mixRecipeOtherWrapper').hide();
+            }
+        });
     </script>
 </body>
 
