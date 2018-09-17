@@ -91,13 +91,46 @@ router.get('/dep-mix', function(req, res, next) {
             dayDate2 == '09-09-2018';
             return dayDate2;
         } else if (tomorrow == 253) {
-            dayDate2 == '09-10-2018';
+            dayDate2 == '09-11-2018';
             return dayDate2;
-        }   
+        } else if (tomorrow == 254) {
+            dayDate2 == '09-12-2018';
+            return dayDate2;
+        } else if (tomorrow == 255) {
+            dayDate2 == '09-13-2018';
+            return dayDate2;
+        } else if (tomorrow == 256) {
+            dayDate2 == '09-14-2018';
+            return dayDate2;
+        } else if (tomorrow == 257) {
+            dayDate2 == '09-15-2018';
+            return dayDate2;
+        } else if (tomorrow == 258) {
+            dayDate2 == '09-16-2018';
+            return dayDate2;
+        } else if (tomorrow == 259) {
+            dayDate2 == '09-17-2018';
+            return dayDate2;
+        } else if (tomorrow == 260) {
+            dayDate2 == '09-18-2018';
+            return dayDate2;
+        } else if (tomorrow == 261) {
+            dayDate2 == '09-19-2018';
+            return dayDate2;
+        } else if (tomorrow == 262) {
+            dayDate2 == '09-20-2018';
+            return dayDate2;
+        } else if (tomorrow == 263) {
+            dayDate2 == '09-21-2018';
+            return dayDate2;
+        } else if (tomorrow == 264) {
+            dayDate2 == '09-22-2018';
+            return dayDate2;
+        }
     }
     let day2 = formatDate2();
     console.log('day2 below');
-    console.log(day2);
+    console.log(dayNum2);
     Events.find({}, function(err, events) {
         res.render('dep-mix', {
             events: events,
@@ -115,12 +148,12 @@ router.post('/dep-mix', function(req, res, next) {
     const events = new Events({
         status: 'Not Started',
         nameWhole: req.body.mixRecipeInput,
-        amount: req.body.mixAmount,
+        amount: req.body.mixAmountInput,
         assignedTo: req.body.mixMixerInput,
         date: req.body.mixDateInput,
         timeStart: req.body.mixTimeStartInput,
         timeEnd: req.body.mixTimeEndInput,
-        notes: req.body.notes
+        notes: req.body.mixNotesInput
     });
     console.log('ID is ' + events._id);
     events.save().then(() => console.log('New Event Created.')).catch(err => console.log(err));

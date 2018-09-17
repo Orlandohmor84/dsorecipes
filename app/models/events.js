@@ -11,7 +11,8 @@ const EventSchema = new Schema({
     assignedTo: String,
     assignedFrom: String,
     nameWhole : String,
-    amount: String
+    amount: String,
+    notes: String
 });
 /*
 // the schema is useless so far
