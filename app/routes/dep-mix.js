@@ -82,55 +82,84 @@ router.get('/dep-mix', function(req, res, next) {
     let dayNum3 = getDayNum3();
     let tomorrow = dayNum2;
     console.log('dayNum2 is ' + dayNum2);
-    let dayDate2;
     let formatDate2 = function() {
-        if (tomorrow == 251) {
+        let dayDate2 = '';
+        console.log('tomorrow is ' + tomorrow);
+        if (tomorrow == 252) {
             dayDate2 == '09-08-2018';
             return dayDate2;
-        } else if (tomorrow == 252) {
+        } else if (tomorrow == 253) {
             dayDate2 == '09-09-2018';
             return dayDate2;
-        } else if (tomorrow == 253) {
+        } else if (tomorrow == 254) {
             dayDate2 == '09-11-2018';
             return dayDate2;
-        } else if (tomorrow == 254) {
+        } else if (tomorrow == 255) {
             dayDate2 == '09-12-2018';
             return dayDate2;
-        } else if (tomorrow == 255) {
+        } else if (tomorrow == 256) {
             dayDate2 == '09-13-2018';
             return dayDate2;
-        } else if (tomorrow == 256) {
+        } else if (tomorrow == 257) {
             dayDate2 == '09-14-2018';
             return dayDate2;
-        } else if (tomorrow == 257) {
+        } else if (tomorrow == 258) {
             dayDate2 == '09-15-2018';
             return dayDate2;
-        } else if (tomorrow == 258) {
+        } else if (tomorrow == 259) {
             dayDate2 == '09-16-2018';
             return dayDate2;
-        } else if (tomorrow == 259) {
+        } else if (tomorrow == 260) {
             dayDate2 == '09-17-2018';
             return dayDate2;
-        } else if (tomorrow == 260) {
+        } else if (tomorrow == 261) {
             dayDate2 == '09-18-2018';
             return dayDate2;
-        } else if (tomorrow == 261) {
-            dayDate2 == '09-19-2018';
-            return dayDate2;
         } else if (tomorrow == 262) {
-            dayDate2 == '09-20-2018';
+            dayDate2 == '09-19-2018';
+            console.log('dayDate2 is ' + dayDate2);
             return dayDate2;
         } else if (tomorrow == 263) {
-            dayDate2 == '09-21-2018';
+            dayDate2 == '09-20-2018';
             return dayDate2;
         } else if (tomorrow == 264) {
+            dayDate2 == '09-21-2018';
+            return dayDate2;
+        } else if (tomorrow == 265) {
             dayDate2 == '09-22-2018';
+            return dayDate2;
+        } else if (tomorrow == 266) {
+            dayDate2 == '09-23-2018';
+            return dayDate2;
+        } else if (tomorrow == 267) {
+            dayDate2 == '09-24-2018';
+            return dayDate2;
+        } else if (tomorrow == 268) {
+            dayDate2 == '09-25-2018';
+            return dayDate2;
+        } else if (tomorrow == 269) {
+            dayDate2 == '09-26-2018';
+            return dayDate2;
+        } else if (tomorrow == 270) {
+            dayDate2 == '09-27-2018';
+            return dayDate2;
+        } else if (tomorrow == 271) {
+            dayDate2 == '09-28-2018';
+            return dayDate2;
+        } else if (tomorrow == 272) {
+            dayDate2 == '09-29-2018';
+            return dayDate2;
+        } else if (tomorrow == 273) {
+            dayDate2 == '09-30-2018';
+            return dayDate2;
+        } else if (tomorrow == 274) {
+            dayDate2 == '10-01-2018';
             return dayDate2;
         }
     }
     let day2 = formatDate2();
     console.log('day2 below');
-    console.log(dayNum2);
+    console.log(day2);
     Events.find({}, function(err, events) {
         res.render('dep-mix', {
             events: events,
@@ -138,8 +167,7 @@ router.get('/dep-mix', function(req, res, next) {
             pageTitle: 'Mixing Schedule',
             pageID: 'schedule-Mix',
             today: today,
-            dayNum1: dayNum1,
-            dayNum2: dayNum2
+            day2: day2
         });
     });;
 });

@@ -80,13 +80,59 @@
             }
 
             if(sessionStorage.mixTimeStart !== undefined) {
-                document.getElementById("mixTimeStart").innerText = sessionStorage.mixTimeStart;
-                document.getElementById("mixTimeStartInput").value = sessionStorage.mixTimeStart;
+                time = sessionStorage.mixTimeStart;
+                time = time.split(':'); // convert to array
+
+                // fetch
+                var hours = Number(time[0]);
+                var minutes = Number(time[1]);
+
+                // calculate
+                var timeValue;
+
+                if (hours > 0 && hours <= 12) {
+                timeValue= "" + hours;
+                } else if (hours > 12) {
+                timeValue= "" + (hours - 12);
+                } else if (hours == 0) {
+                timeValue= "12";
+                }
+                
+                timeValue += (minutes < 10) ? ":0" + minutes : ":" + minutes;  // get minutes
+                timeValue += (hours >= 12) ? " P.M." : " A.M.";  // get AM/PM
+
+                // show
+                console.log(timeValue);
+                document.getElementById("mixTimeStart").innerText = timeValue;
+                document.getElementById("mixTimeStartInput").value = timeValue;
             }
 
             if(sessionStorage.mixTimeEnd !== undefined) {
-                document.getElementById("mixTimeEnd").innerText = sessionStorage.mixTimeEnd;
-                document.getElementById("mixTimeEndInput").value = sessionStorage.mixTimeEnd;
+                time = sessionStorage.mixTimeEnd;
+                time = time.split(':'); // convert to array
+
+                // fetch
+                var hours = Number(time[0]);
+                var minutes = Number(time[1]);
+
+                // calculate
+                var timeValue;
+
+                if (hours > 0 && hours <= 12) {
+                timeValue= "" + hours;
+                } else if (hours > 12) {
+                timeValue= "" + (hours - 12);
+                } else if (hours == 0) {
+                timeValue= "12";
+                }
+                
+                timeValue += (minutes < 10) ? ":0" + minutes : ":" + minutes;  // get minutes
+                timeValue += (hours >= 12) ? " P.M." : " A.M.";  // get AM/PM
+
+                // show
+                console.log(timeValue);
+                document.getElementById("mixTimeEnd").innerText = timeValue;
+                document.getElementById("mixTimeEndInput").value = timeValue;
             }
 
             if(sessionStorage.mixNotes !== undefined) {
