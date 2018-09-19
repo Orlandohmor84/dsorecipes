@@ -72,13 +72,59 @@
             }
 
             if(sessionStorage.prodMainTimeStart !== undefined) {
-                document.getElementById("prodMainTimeStart").innerText = sessionStorage.prodMainTimeStart;
-                document.getElementById("prodMainTimeStartInput").value = sessionStorage.prodMainTimeStart;
+                time = sessionStorage.prodMainTimeStart;
+                time = time.split(':'); // convert to array
+
+                // fetch
+                var hours = Number(time[0]);
+                var minutes = Number(time[1]);
+
+                // calculate
+                var timeValue;
+
+                if (hours > 0 && hours <= 12) {
+                timeValue= "" + hours;
+                } else if (hours > 12) {
+                timeValue= "" + (hours - 12);
+                } else if (hours == 0) {
+                timeValue= "12";
+                }
+                
+                timeValue += (minutes < 10) ? ":0" + minutes : ":" + minutes;  // get minutes
+                timeValue += (hours >= 12) ? " P.M." : " A.M.";  // get AM/PM
+
+                // show
+                console.log(timeValue);
+                document.getElementById("prodMainTimeStart").innerText = timeValue;
+                document.getElementById("prodMainTimeStartInput").value = timeValue;
             }
 
             if(sessionStorage.prodMainTimeEnd !== undefined) {
-                document.getElementById("prodMainTimeEnd").innerText = sessionStorage.prodMainTimeEnd;
-                document.getElementById("prodMainTimeEndInput").value = sessionStorage.prodMainTimeEnd;
+                time = sessionStorage.prodMainTimeEnd;
+                time = time.split(':'); // convert to array
+
+                // fetch
+                var hours = Number(time[0]);
+                var minutes = Number(time[1]);
+
+                // calculate
+                var timeValue;
+
+                if (hours > 0 && hours <= 12) {
+                timeValue= "" + hours;
+                } else if (hours > 12) {
+                timeValue= "" + (hours - 12);
+                } else if (hours == 0) {
+                timeValue= "12";
+                }
+                
+                timeValue += (minutes < 10) ? ":0" + minutes : ":" + minutes;  // get minutes
+                timeValue += (hours >= 12) ? " P.M." : " A.M.";  // get AM/PM
+
+                // show
+                console.log(timeValue);
+                document.getElementById("prodMainTimeEnd").innerText = timeValue;
+                document.getElementById("prodMainTimeEndInput").value = timeValue;
             }
 
             if(sessionStorage.prodMainNotes !== undefined) {
