@@ -17,6 +17,7 @@
 
 ### Releases ###
 
+* v1.1.7 - 09/19/18 - More logo fixes.
 * v1.1.6 - 09/19/18 - Updated logo.
 * v1.1.5 - 09/19/18 - Converted military time to standard for main production schedule.
 * v1.1.4 - 09/18/18 - Converted military time to standard.
