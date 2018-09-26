@@ -75,6 +75,7 @@ Sections
         border-color: #000;
     }
     .clock {
+        display: none;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -83,6 +84,11 @@ Sections
         font-size: 60px;
         font-family: Orbitron;
         letter-spacing: 7px;
+    }
+    @media screen and (min-width:800px) {
+        .clock {
+            display: inline-block;
+        }
     }
 /*----- End Header Styles -----*/
 
