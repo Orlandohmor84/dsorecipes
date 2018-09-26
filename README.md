@@ -17,6 +17,7 @@
 
 ### Releases ###
 
+* v1.2.0 - 09/27/18 - Added live time clock.
 * v1.1.9 - 09/26/18 - Logo fixes.
 * v1.1.8 - 09/26/18 - Logo fixes.
 * v1.1.7 - 09/19/18 - More logo fixes.
