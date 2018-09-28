@@ -3,13 +3,12 @@
 ## What is this repository for ##
 
 * Doctors Scientific Organica - Production Web App
-* Version 1.1
+* Version 1.2
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
 ### How do I get set up ###
 
 * Git clone git clone [https://bitbucket.org/sfldso/mixapp.git](https://bitbucket.org/sfldso/mixapp/src.git)
-* Not sure yet
 
 ### Who do I talk to ###
 
@@ -17,6 +16,7 @@
 
 ### Releases ###
 
+* v1.2.2 - 09/28/18 - Added notes to main production view.
 * v1.2.1 - 09/26/18 - Mobile time clock patch.
 * v1.2.0 - 09/26/18 - Added live time clock.
 * v1.1.9 - 09/26/18 - Logo fixes.

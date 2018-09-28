@@ -119,7 +119,7 @@ router.post('/dep-prod-main', function(req, res, next) {
         date: req.body.prodMainDateInput,
         timeStart: req.body.prodMainTimeStartInput,
         timeEnd: req.body.prodMainTimeEndInput,
-        notes: req.body.notes
+        notes: req.body.prodMainNotesInput
     });
     console.log('ID is ' + eventsProdMain._id);
     eventsProdMain.save().then(() => console.log('New Event Created.')).catch(err => console.log(err));
