@@ -16,6 +16,7 @@
 
 ### Releases ###
 
+* v1.2.4 - 10/01/18 - Removed recipes.
 * v1.2.3 - 09/28/18 - Removed tomorrow from table.
 * v1.2.2 - 09/28/18 - Added notes to main production view.
 * v1.2.1 - 09/26/18 - Mobile time clock patch.
