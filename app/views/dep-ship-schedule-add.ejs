@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/template/head-norefresh.ejs %>
+</head>
+
+<body id="<%= pageID %>">
+        <% include partials/template/header.ejs %>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 title">
+                <h1><%= pageTitle %></h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <form method="POST" action="/dep-ship-schedule-review">
+            <div class="form-group">
+                <label for="shipPo">PO</label>
+                <input type="text" class="form-control" id="shipPo" name="shipPo" oninput="sessionStorage.shipPo=this.value;">
+            </div>
+            <div class="form-group">
+                <label for="shipDest">Destination</label>
+                <input type="text" class="form-control" id="shipDest" name="shipDest" oninput="sessionStorage.shipDest=this.value;">
+            </div>
+            <div class="form-group">
+                <label for="shipPallets"># of Pallets</label>
+                <input type="text" class="form-control" id="shipPallets" name="shipPallets" oninput="sessionStorage.shipPallets=this.value;">
+            </div>
+            <div class="form-group">
+                <label for="shipDateIn">In Date</label>
+                <input class="form-control" type="date" id="shipDateIn" name="shipDateIn" oninput="sessionStorage.shipDateIn=this.value;">
+            </div>
+            <div class="form-group">
+                <label for="shipDateShip">Ship Date</label>
+                <input class="form-control" type="date" id="shipDateShip" name="shipDateShip" oninput="sessionStorage.shipDateShip=this.value;">
+            </div>
+            <div class="form-group">
+                <label for="shipDateDue">Due Date</label>
+                <input class="form-control" type="date" id="shipDateDue" name="shipDateDue" oninput="sessionStorage.shipDateDue=this.value;">
+            </div>
+            <div class="form-group">
+                <label for="shipProducts">Products</label>
+                <input type="text" class="form-control" id="shipProducts" name="shipProducts" oninput="sessionStorage.shipProducts=this.value;">
+            </div>
+            <div class="form-group">
+                <label for="shipNotes">Notes</label>
+                <textarea class="form-control" id="shipNotes" name="shipNotes" rows="3" oninput="sessionStorage.shipNotes=this.value;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div><!-- /.container -->
+    <% include partials/template/scripts.ejs %>
+
+</body>
+
+</html>

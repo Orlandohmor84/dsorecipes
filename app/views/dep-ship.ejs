@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/template/head.ejs %>
+
+    <style>
+        .scheduleGroup {
+            width: 800px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body id="<%= pageID %>">
+        <% include partials/template/header.ejs %>
+    <div class="container-fluid">
+        <div class="row title">
+            <div class="col-xs-6">
+                <h1><%= pageTitle %></h1>
+            </div><!-- /.ol -->
+            <div class="col-xs-6 ctaButtons">
+                <button type="button" class="btn"><a href="/dep-ship-schedule-add">Add to Schedule</a></button>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+
+        <div class="row">
+            <div class="col-xs-12 table-responsive">
+                <h2>Today</h2>
+                <table class="table table-striped table-sm"  id="scheduleTable" style="text-align:center;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Status</th>
+                            <th scope="col">PO</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col"># of Pallets</th>
+                            <th scope="col">In Date</th>
+                            <th scope="col">Ship Date</th>
+                            <th scope="col">Due Date</th>
+                            <th scope="col">Products</th>
+                            <th scope="col">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% shipments.forEach(function(shipment) { %>
+                            <% if (shipment.status == 'Open') { %>
+                            <tr>
+                                <td><%= shipment.status %></td>
+                                <td><%= shipment.po %></td>
+                                <td><%= shipment.dest %></td>
+                                <td><%= shipment.pallets %></td>
+                                <td><%= shipment.dateIn %></td>
+                                <td><%= shipment.dateShip %></td>
+                                <td><%= shipment.dateDue %></td>
+                                <td><%= shipment.products %></td>
+                                <td><%= shipment.notes %></td>
+                            </tr>
+                        <% }}) %>
+                        
+                    </tbody>
+                </table>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+
+    </div><!-- /.container -->
+    <% include partials/template/scripts.ejs %>
+</body>
+
+</html>
