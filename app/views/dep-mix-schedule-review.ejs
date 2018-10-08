@@ -160,6 +160,7 @@
             .done(function( msg ) {
                 console.log('New event added.');
                 console.log(data);
+                sessionStorage.clear();
                 window.location.href = '/dep-mix';
             })
             .fail( function(xhr, textStatus, errorThrown) {

@@ -151,6 +151,7 @@
             .done(function( msg ) {
                 console.log('New event added.');
                 console.log(data);
+                sessionStorage.clear();
                 window.location.href = '/dep-prod-main';
             })
             .fail( function(xhr, textStatus, errorThrown) {

@@ -125,6 +125,7 @@
             .done(function( msg ) {
                 console.log('New shipment added.');
                 console.log(data);
+                sessionStorage.clear();
                 window.location.href = '/dep-ship';
             })
             .fail( function(xhr, textStatus, errorThrown) {
