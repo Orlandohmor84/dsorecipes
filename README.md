@@ -16,6 +16,7 @@
 
 ### Releases ###
 
+* v1.3.1 - 10/08/18 - Link fixes. Views cleanup.
 * v1.3.0 - 10/08/18 - Shipping Schedule.
 * v1.2.4 - 10/01/18 - Removed recipes.
 * v1.2.3 - 09/28/18 - Removed tomorrow from table.
