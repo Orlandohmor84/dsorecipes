@@ -5,7 +5,7 @@ const ShipmentSchema = new Schema({
     status: String,
     po: String,
     dest: String,
-    pallets: Number,
+    pallets: String,
     dateIn : String,
     dateShip: String,
     dateDue: String,
