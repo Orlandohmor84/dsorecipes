@@ -70,6 +70,26 @@
                 $('#prodMainProductOtherWrapper').hide();
             }
         });
+
+        const getMainProdData = function() {
+            console.log('getMixData function starting.');
+
+            if(sessionStorage.prodMainAmount !== undefined) {
+                document.getElementById("prodMainAmount").value = sessionStorage.prodMainAmount;
+            }
+            
+            if(sessionStorage.prodMainDate !== undefined) {
+                document.getElementById("prodMainDateSelect").value = sessionStorage.prodMainDate;
+            }
+
+            if(sessionStorage.prodMainNotes !== undefined) {
+                document.getElementById("prodMainNotes").value = sessionStorage.prodMainNotes;
+            }
+            
+        };
+        $(document).ready(function() {
+            getMainProdData();
+        });
     </script>
 </body>
 

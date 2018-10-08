@@ -51,6 +51,47 @@
     </div><!-- /.container -->
     <% include partials/template/scripts.ejs %>
 
+    <script>
+        const getShipData = function() {
+            console.log('getMixData function starting.');
+
+            if(sessionStorage.shipPo !== undefined) {
+                document.getElementById("shipPo").value = sessionStorage.shipPo;
+            }
+            
+            if(sessionStorage.shipDest !== undefined) {
+                document.getElementById("shipDest").value = sessionStorage.shipDest;
+            }
+
+            if(sessionStorage.shipPallets !== undefined) {
+                document.getElementById("shipPallets").value = sessionStorage.shipPallets;
+            }
+            if(sessionStorage.shipDateIn !== undefined) {
+                document.getElementById("shipDateIn").value = sessionStorage.shipDateIn;
+            }
+            
+            if(sessionStorage.shipDateShip !== undefined) {
+                document.getElementById("shipDateShip").value = sessionStorage.shipDateShip;
+            }
+
+            if(sessionStorage.shipDateDue !== undefined) {
+                document.getElementById("shipDateDue").value = sessionStorage.shipDateDue;
+            }
+            
+            if(sessionStorage.shipProduct !== undefined) {
+                document.getElementById("shipProduct").value = sessionStorage.shipProduct;
+            }
+            
+            if(sessionStorage.shipNotes !== undefined) {
+                document.getElementById("shipNotes").value = sessionStorage.shipNotes;
+            }
+            
+        };
+        $(document).ready(function() {
+            getShipData();
+        });
+    </script>
+
 </body>
 
 </html>

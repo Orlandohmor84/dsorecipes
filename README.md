@@ -16,6 +16,7 @@
 
 ### Releases ###
 
+* v1.3.3 - 10/08/18 - 
 * v1.3.2 - 10/08/18 - Clear storage after form submission.
 * v1.3.1 - 10/08/18 - Link fixes. Views cleanup.
 * v1.3.0 - 10/08/18 - Shipping Schedule.
