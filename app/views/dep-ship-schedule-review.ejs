@@ -26,7 +26,7 @@
                                 <th scope="col">In Date</th>
                                 <th scope="col">Ship Date</th>
                                 <th scope="col">Due Date</th>
-                                <th scope="col">Products</th>
+                                <th scope="col">Product</th>
                                 <th scope="col">Notes</th>
                             </tr>
                         </thead>
@@ -39,7 +39,7 @@
                                 <td id="shipDateIn"></td>
                                 <td id="shipDateShip"></td>
                                 <td id="shipDateDue"></td>
-                                <td id="shipProducts"></td>
+                                <td id="shipProduct"></td>
                                 <td id="shipNotes"></td>
                             </tr>
                         </tbody>
@@ -50,7 +50,7 @@
                     <input type="hidden" id="shipDateInInput">
                     <input type="hidden" id="shipDateShipInput">
                     <input type="hidden" id="shipDateDueInput">
-                    <input type="hidden" id="shipProductsInput">
+                    <input type="hidden" id="shipProductInput">
                     <input type="hidden" id="shipNotesInput">
                     <button class="btn" id="createEventBtn" type="button">Submit</button>
                     <button class="btn" type="button"><a href="/dep-ship-schedule-add">Edit</a></button>
@@ -94,9 +94,9 @@
                 document.getElementById("shipDateDueInput").value = sessionStorage.shipDateDue;
             }
 
-            if(sessionStorage.shipProducts !== undefined) {
-                document.getElementById("shipProducts").innerText = sessionStorage.shipProducts;
-                document.getElementById("shipProductsInput").value = sessionStorage.shipProducts;
+            if(sessionStorage.shipProduct !== undefined) {
+                document.getElementById("shipProduct").innerText = sessionStorage.shipProduct;
+                document.getElementById("shipProductInput").value = sessionStorage.shipProduct;
             }
 
             if(sessionStorage.shipNotes !== undefined) {
@@ -114,18 +114,18 @@
                 data: { 
                     shipPoInput: $('#shipPoInput').val(),
                     shipDestInput: $('#shipDestInput').val(),
-                    shipPalletsInput: $('shipPalletsInput').val(),
-                    shipDateInInput: $('shipDateInInput').val(),
+                    shipPalletsInput: $('#shipPalletsInput').val(),
+                    shipDateInInput: $('#shipDateInInput').val(),
                     shipDateShipInput: $('#shipDateShipInput').val(),
                     shipDateDueInput: $('#shipDateDueInput').val(),
-                    shipProductsInput: $('#shipProductsInput').val(),
+                    shipProductInput: $('#shipProductInput').val(),
                     shipNotesInput: $('#shipNotesInput').val()       
                 }
             })
             .done(function( msg ) {
-                console.log('New event added.');
+                console.log('New shipment added.');
                 console.log(data);
-                window.location.href = '/dep-mix';
+                window.location.href = '/dep-ship';
             })
             .fail( function(xhr, textStatus, errorThrown) {
                 alert(xhr.responseText);

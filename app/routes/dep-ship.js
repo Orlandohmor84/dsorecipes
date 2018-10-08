@@ -35,19 +35,19 @@ router.post('/dep-ship', function(req, res, next) {
         dest: req.body.shipDestInput,
         pallets: req.body.shipPalletsInput,
         dateIn : req.body.shipDateInInput,
-        dateShip: req.body.shipDateInput,
-        dateDue: req.body.shipDateDueInputg,
+        dateShip: req.body.shipDateShipInput,
+        dateDue: req.body.shipDateDueInput,
         product: req.body.shipProductInput,
         notes: req.body.shipNotesInput
     });
-    console.log('ID is ' + shipmentss._id);
-    events.save().then(() => console.log('New Shipment Created.')).catch(err => console.log(err));
+    console.log('ID is ' + shipments._id);
+    shipments.save().then(() => console.log('New Shipment Created.')).catch(err => console.log(err));
 
     console.log(shipments._id);
     const shipmentsId = shipments._id;
     
     Shipments.find({}, function(err, shipments) {
-        res.redirect(200, '/dep-mix', {
+        res.redirect(200, '/dep-ship', {
             shipments: shipments,
             pathToRoot: '/',
             pageTitle: 'Shipments',
