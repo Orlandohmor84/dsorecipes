@@ -16,6 +16,7 @@
 
 ### Releases ###
 
+* v1.3.4 - 10/10/18 - Style imrpovements.
 * v1.3.3 - 10/08/18 - Auto-fill editing view.
 * v1.3.2 - 10/08/18 - Clear storage after form submission.
 * v1.3.1 - 10/08/18 - Link fixes. Views cleanup.
