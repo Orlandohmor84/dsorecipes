@@ -16,7 +16,8 @@
 
 ### Releases ###
 
-* v1.3.4 - 10/10/18 - Style imrpovements.
+* v1.3.5 - 10/11/18 - Added shift column.
+* v1.3.4 - 10/10/18 - Style improvements.
 * v1.3.3 - 10/08/18 - Auto-fill editing view.
 * v1.3.2 - 10/08/18 - Clear storage after form submission.
 * v1.3.1 - 10/08/18 - Link fixes. Views cleanup.

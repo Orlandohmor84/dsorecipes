@@ -8,7 +8,8 @@ const EventProdMainSchema = new Schema({
     timeEnd: String,
     nameWhole : String,
     amount: String,
-    notes: String
+    notes: String,
+    shift: String
 });
 /*
 // the schema is useless so far

@@ -39,7 +39,7 @@
                 <input class="form-control" type="text" id="mixAmount" name="mixAmount" oninput="sessionStorage.mixAmount=this.value;">
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Assign Mixer</label>
+                <label for="mixMixerSelect">Assign Mixer</label>
                 <select class="form-control" id="mixMixerSelect" name="mixMixerSelect" oninput="sessionStorage.mixMixer=this.value;">
                     <option value="">(select one)</option>
                     <option>Andre</option>
@@ -47,7 +47,6 @@
                     <option>Eric</option>
                     <option>Gregory</option>
                     <option>Manuel</option>
-                    <option>Phillip</option>
                     <option>Rolayne</option>
                     <option>Other</option>
                 </select>
@@ -59,6 +58,15 @@
             <div class="form-group">
                 <label for="mixDateSelect">Select Date</label>
                 <input class="form-control" type="date" id="mixDateSelect" name="mixDateSelect" oninput="sessionStorage.mixDate=this.value;">
+            </div>
+            <div class="form-group">
+                <label for="mixShiftSelect">Shift</label>
+                <select class="form-control" id="mixShiftSelect" name="mixShiftSelect" oninput="sessionStorage.mixShift=this.value;">
+                    <option value="">(select one)</option>
+                    <option>Morning</option>
+                    <option>Afternoon</option>
+                    <option>Night</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="mixTimeStartSelect">Select Start Time</label>
@@ -113,6 +121,10 @@
 
             if(sessionStorage.mixDate !== undefined) {
                 document.getElementById("mixDateSelect").value = sessionStorage.mixDate;
+            }
+
+            if(sessionStorage.mixShift !== undefined) {
+                document.getElementById("mixShiftSelect").value = sessionStorage.mixShift;
             }
 
             if(sessionStorage.mixNotes !== undefined) {

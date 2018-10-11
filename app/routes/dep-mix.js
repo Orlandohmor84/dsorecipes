@@ -181,6 +181,7 @@ router.post('/dep-mix', function(req, res, next) {
         date: req.body.mixDateInput,
         timeStart: req.body.mixTimeStartInput,
         timeEnd: req.body.mixTimeEndInput,
+        shift: req.body.mixShiftInput,
         notes: req.body.mixNotesInput
     });
     console.log('ID is ' + events._id);

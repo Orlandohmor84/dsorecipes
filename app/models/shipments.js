@@ -10,7 +10,8 @@ const ShipmentSchema = new Schema({
     dateShip: String,
     dateDue: String,
     product: String,
-    notes: String
+    notes: String,
+    shift: String
 });
 /*
 // the schema is useless so far

@@ -20,8 +20,9 @@
                         <thead>
                             <tr>
                                 <th scope="col">Date</th>
-                                <th scope="col">Start Time</th>
-                                <th scope="col">End Time</th>
+                                <th scope="col">Start</th>
+                                <th scope="col">End</th>
+                                <th scope="col">Shift</th>
                                 <th scope="col">Product</th>
                                 <th scope="col">Amount</th>
                                 <th scope="col">Notes</th>
@@ -32,6 +33,7 @@
                                 <td id="prodMainDate"></td>
                                 <td id="prodMainTimeStart"></td>
                                 <td id="prodMainTimeEnd"></td>
+                                <td id="prodMainShift"></td>
                                 <td id="prodMainProduct"></td>
                                 <td id="prodMainAmount"></td>
                                 <td id="prodMainNotes"></td>
@@ -43,6 +45,7 @@
                     <input type="hidden" id="prodMainDateInput">
                     <input type="hidden" id="prodMainTimeStartInput">
                     <input type="hidden" id="prodMainTimeEndInput">
+                    <input type="hidden" id="prodMainShiftInput">
                     <input type="hidden" id="prodMainNotesInput">
                     <button class="btn" id="createEventBtn" type="button">Submit</button>
                     <button class="btn" type="button"><a href="/dep-prod-main-schedule-add">Edit</a></button>
@@ -127,6 +130,11 @@
                 document.getElementById("prodMainTimeEndInput").value = timeValue;
             }
 
+            if(sessionStorage.prodMainShift !== undefined) {
+                document.getElementById("prodMainShift").innerText = sessionStorage.prodMainShift;
+                document.getElementById("prodMainShiftInput").value = sessionStorage.prodMainShift;
+            }
+
             if(sessionStorage.prodMainNotes !== undefined) {
                 document.getElementById("prodMainNotes").innerText = sessionStorage.prodMainNotes;
                 document.getElementById("prodMainNotesInput").value = sessionStorage.prodMainNotes;
@@ -145,6 +153,7 @@
                     prodMainDateInput: $('#prodMainDateInput').val(),
                     prodMainTimeStartInput: $('#prodMainTimeStartInput').val(),
                     prodMainTimeEndInput: $('#prodMainTimeEndInput').val(),
+                    prodMainShiftInput: $('#prodMainShiftInput').val(),
                     prodMainNotesInput:  $('#prodMainNotesInput').val()           
                 }
             })

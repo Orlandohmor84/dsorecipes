@@ -20,8 +20,9 @@
                         <thead>
                             <tr>
                                 <th scope="col">Date</th>
-                                <th scope="col">Start Time</th>
-                                <th scope="col">End Time</th>
+                                <th scope="col">Start</th>
+                                <th scope="col">End</th>
+                                <th scope="col">Shift</th>
                                 <th scope="col">Assigned To</th>
                                 <th scope="col">Product</th>
                                 <th scope="col">Amount</th>
@@ -33,6 +34,7 @@
                                 <td id="mixDate"></td>
                                 <td id="mixTimeStart"></td>
                                 <td id="mixTimeEnd"></td>
+                                <td id="mixShift"></td>
                                 <td id="mixMixer"></td>
                                 <td id="mixRecipe"></td>
                                 <td id="mixAmount"></td>
@@ -46,6 +48,7 @@
                     <input type="hidden" id="mixDateInput">
                     <input type="hidden" id="mixTimeStartInput">
                     <input type="hidden" id="mixTimeEndInput">
+                    <input type="hidden" id="mixShiftInput">
                     <input type="hidden" id="mixNotesInput">
                     <button class="btn" id="createEventBtn" type="button">Submit</button>
                     <button class="btn" type="button"><a href="/dep-mix-schedule-add">Edit</a></button>
@@ -135,6 +138,11 @@
                 document.getElementById("mixTimeEndInput").value = timeValue;
             }
 
+            if(sessionStorage.mixShift !== undefined) {
+                document.getElementById("mixShift").innerText = sessionStorage.mixShift;
+                document.getElementById("mixShiftInput").value = sessionStorage.mixShift;
+            }
+
             if(sessionStorage.mixNotes !== undefined) {
                 document.getElementById("mixNotes").innerText = sessionStorage.mixNotes;
                 document.getElementById("mixNotesInput").value = sessionStorage.mixNotes;
@@ -154,6 +162,7 @@
                     mixDateInput: $('#mixDateInput').val(),
                     mixTimeStartInput: $('#mixTimeStartInput').val(),
                     mixTimeEndInput: $('#mixTimeEndInput').val(),
+                    mixShiftInput: $('#mixShiftInput').val(),
                     mixNotesInput:  $('#mixNotesInput').val()           
                 }
             })

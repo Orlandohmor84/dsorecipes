@@ -31,8 +31,9 @@
                     <thead>
                         <tr>
                             <th scope="col">Date</th>
-                            <th scope="col">Start Time</th>
-                            <th scope="col">End Time</th>
+                            <th scope="col">Start</th>
+                            <th scope="col">End</th>
+                            <th scope="col">Shift</th>
                             <th scope="col">Assigned To</th>
                             <th scope="col">Amount</th>
                             <th scope="col">Product</th>
@@ -46,6 +47,7 @@
                                 <td><%= event.date %></td>
                                 <td id="timeStart"><%= event.timeStart %></td>
                                 <td id="timeEnd"><%= event.timeEnd %></td>
+                                <td><%= event.shift %></td>
                                 <td><%= event.assignedTo %></td>
                                 <td><%= event.amount %></td>
                                 <td><%= event.nameWhole %></td>
