@@ -17,13 +17,36 @@ let data = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
 data.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+let getToday = function(){
+    let date = new Date();
+    console.log(date);
+    let m1 = date.getMonth() + 1;
+    if (m1 == 10 || m1 == 11 || m1 == 12) {
+        m= m1;
+    } else {
+        m = '0' + m1;
+    }
+    let d1 = date.getDate();
+    if (d1 == 1 || d1 == 2 || d1 == 3 || d1 == 4 || d1 == 5 || d1 == 6 || d1 == 7 || d1 == 8 || d1 == 9){
+        d = '0' + d1;
+    } else {
+        d = d1;
+    }
+    let y = date.getFullYear();
+    let today = y + "-" + m + "-" + d;
+    console.log(today);
+    return today;
+}
+
 router.get('/dep-ship', function(req, res, next) {
+    let today = getToday();
     Shipments.find({}, function(err, shipments) {
         res.render('dep-ship', {
             shipments: shipments,
             pathToRoot: '/',
             pageTitle: 'Shipments',
-            pageID: 'schedule-ship'
+            pageID: 'schedule-ship',
+            today: today
         });
     });;
 });
@@ -55,5 +78,45 @@ router.post('/dep-ship', function(req, res, next) {
         });
     });;
 });
+
+router.delete('dep-ship/delete/:id?', function(req,res, next) {
+    let id = req.params.id;
+    console.log('Deleting record: ' + id);
+    let collection = db.get().collection('shipments');
+  
+    collection.deleteOne({ _id: new mongo.ObjectId(id) }, function (err, results) {
+    });
+  
+    Shipments.find({}, function(err, shipments) {
+        res.render('dep-ship', {
+            shipments: shipments,
+            pathToRoot: '/',
+            pageTitle: 'Shipments',
+            pageID: 'schedule-ship',
+            today: today
+        });
+    });;
+});
+
+/*
+router.delete('/dep-ship/delete/:id', function (req, res) {
+    let id = req.params.id;
+    console.log('Deleting record: ' + id);
+    let collection = db.get().collection('shipments');
+  
+    collection.deleteOne({ _id: new mongo.ObjectId(id) }, function (err, results) {
+    });
+  
+    Shipments.find({}, function(err, shipments) {
+        res.render('dep-ship', {
+            shipments: shipments,
+            pathToRoot: '/',
+            pageTitle: 'Shipments',
+            pageID: 'schedule-ship',
+            today: today
+        });
+    });;
+  });
+  */
 
 module.exports = router;

@@ -30,6 +30,7 @@
                 <table class="table table-striped table-sm"  id="scheduleTable" style="text-align:center;">
                     <thead>
                         <tr>
+                            <th scope="col"></th>
                             <th scope="col">Status</th>
                             <th scope="col">PO</th>
                             <th scope="col">Destination</th>
@@ -45,7 +46,8 @@
                         <% shipments.forEach(function(shipment) { %>
                             <% if (shipment.status == 'Open') { %>
                             <tr>
-                                <td><%= shipment.status %></td>
+                                <td><form method="DELETE" action="/dep-ship/delete/<%= shipment.id %>"><button type="submit" class="btn" style="background-color:red;color:#fff;">Delete</button></form></td>
+                                <td class="status"><%= shipment.status %></td>
                                 <td><%= shipment.po %></td>
                                 <td><%= shipment.dest %></td>
                                 <td><%= shipment.pallets %></td>
@@ -64,6 +66,10 @@
 
     </div><!-- /.container -->
     <% include partials/template/scripts.ejs %>
+
+    <script>
+        
+    </script>
 </body>
 
 </html>
