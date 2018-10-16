@@ -16,6 +16,7 @@
 
 ### Releases ###
 
+* v1.3.6 - 10/16/18 - Ship today and upcoming tables.
 * v1.3.5 - 10/11/18 - Added shift column.
 * v1.3.4 - 10/10/18 - Style improvements.
 * v1.3.3 - 10/08/18 - Auto-fill editing view.

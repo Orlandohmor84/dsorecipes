@@ -79,7 +79,8 @@ router.post('/dep-ship', function(req, res, next) {
     });;
 });
 
-router.delete('dep-ship/delete/:id?', function(req,res, next) {
+router.delete('dep-ship/delete/:id/', function(req,res, next) {
+    console.log('Route found.');
     let id = req.params.id;
     console.log('Deleting record: ' + id);
     let collection = db.get().collection('shipments');
