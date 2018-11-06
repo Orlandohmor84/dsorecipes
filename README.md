@@ -16,6 +16,7 @@
 
 ### Releases ###
 
+* v1.3.7 - 11/06/18 - Reduced shipping table columns.
 * v1.3.6 - 10/16/18 - Ship today and upcoming tables.
 * v1.3.5 - 10/11/18 - Added shift column.
 * v1.3.4 - 10/10/18 - Style improvements.
