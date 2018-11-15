@@ -13,7 +13,8 @@ const EventSchema = new Schema({
     nameWhole : String,
     amount: String,
     notes: String,
-    shift: String
+    shift: String,
+    line: String
 });
 /*
 // the schema is useless so far

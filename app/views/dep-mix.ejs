@@ -42,7 +42,7 @@
                     </thead>
                     <tbody>
                         <% events.forEach(function(event) { %>
-                            <% if (event.date == today) { %>
+                            <% if (event.status == 'New') { %>
                             <tr>
                                 <td><%= event.date %></td>
                                 <td id="timeStart"><%= event.timeStart %></td>

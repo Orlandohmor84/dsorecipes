@@ -3,7 +3,7 @@
 ## What is this repository for ##
 
 * Doctors Scientific Organica - Production Web App
-* Version 1.3
+* Version 1.4
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
 ### How do I get set up ###
@@ -16,6 +16,7 @@
 
 ### Releases ###
 
+* v1.4.0 - 11/15/18 - Show all incomplete events.
 * v1.3.7 - 11/06/18 - Reduced shipping table columns.
 * v1.3.6 - 10/16/18 - Ship today and upcoming tables.
 * v1.3.5 - 10/11/18 - Added shift column.
