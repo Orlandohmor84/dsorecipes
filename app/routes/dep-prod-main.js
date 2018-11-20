@@ -113,7 +113,7 @@ router.get('/dep-prod-main', function(req, res, next) {
 
 router.post('/dep-prod-main', function(req, res, next) {
     const eventsProdMain = new EventsProdMain({
-        status: 'Not Started',
+        status: 'New',
         nameWhole: req.body.prodMainProductInput,
         amount: req.body.prodMainAmountInput,
         date: req.body.prodMainDateInput,

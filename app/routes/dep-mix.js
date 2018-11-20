@@ -174,7 +174,7 @@ router.get('/dep-mix', function(req, res, next) {
 
 router.post('/dep-mix', function(req, res, next) {
     const events = new Events({
-        status: 'Not Started',
+        status: 'New',
         nameWhole: req.body.mixRecipeInput,
         amount: req.body.mixAmountInput,
         assignedTo: req.body.mixMixerInput,
