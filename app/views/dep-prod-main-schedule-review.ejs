@@ -22,10 +22,10 @@
                                 <th scope="col">Date</th>
                                 <th scope="col">Start</th>
                                 <th scope="col">End</th>
-                                <th scope="col">Shift</th>
-                                <th scope="col">Product</th>
+                                <th scope="col">Line</th>
+                                <th scope="col">Manager</th>
                                 <th scope="col">Amount</th>
-                                <th scope="col">Notes</th>
+                                <th scope="col">Product</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,10 +33,10 @@
                                 <td id="prodMainDate"></td>
                                 <td id="prodMainTimeStart"></td>
                                 <td id="prodMainTimeEnd"></td>
-                                <td id="prodMainShift"></td>
-                                <td id="prodMainProduct"></td>
+                                <td id="prodMainLine"></td>
+                                <td id="prodMainManager"></td>
                                 <td id="prodMainAmount"></td>
-                                <td id="prodMainNotes"></td>
+                                <td id="prodMainProduct"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -45,8 +45,8 @@
                     <input type="hidden" id="prodMainDateInput">
                     <input type="hidden" id="prodMainTimeStartInput">
                     <input type="hidden" id="prodMainTimeEndInput">
-                    <input type="hidden" id="prodMainShiftInput">
-                    <input type="hidden" id="prodMainNotesInput">
+                    <input type="hidden" id="prodMainManagerInput">
+                    <input type="hidden" id="prodMainLineInput">
                     <button class="btn" id="createEventBtn" type="button">Submit</button>
                     <button class="btn" type="button"><a href="/dep-prod-main-schedule-add">Edit</a></button>
                 </form>
@@ -139,6 +139,16 @@
                 document.getElementById("prodMainNotes").innerText = sessionStorage.prodMainNotes;
                 document.getElementById("prodMainNotesInput").value = sessionStorage.prodMainNotes;
             }
+
+            if(sessionStorage.prodMainLine !== undefined) {
+                document.getElementById("prodMainLine").innerText = sessionStorage.prodMainLine;
+                document.getElementById("prodMainLineInput").value = sessionStorage.prodMainLine;
+            }
+
+            if(sessionStorage.prodMainManager !== undefined) {
+                document.getElementById("prodMainManager").innerText = sessionStorage.prodMainManager;
+                document.getElementById("prodMainManagerInput").value = sessionStorage.prodMainManager;
+            }
         };
         $(document).ready(function() {
             reviewData();
@@ -153,8 +163,8 @@
                     prodMainDateInput: $('#prodMainDateInput').val(),
                     prodMainTimeStartInput: $('#prodMainTimeStartInput').val(),
                     prodMainTimeEndInput: $('#prodMainTimeEndInput').val(),
-                    prodMainShiftInput: $('#prodMainShiftInput').val(),
-                    prodMainNotesInput:  $('#prodMainNotesInput').val()           
+                    prodMainLineInput: $('#prodMainLineInput').val(),
+                    prodMainManagerInput:  $('#prodMainManagerInput').val()           
                 }
             })
             .done(function( msg ) {
