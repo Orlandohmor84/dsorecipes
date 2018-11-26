@@ -120,6 +120,8 @@ router.post('/dep-prod-main', function(req, res, next) {
         timeStart: req.body.prodMainTimeStartInput,
         timeEnd: req.body.prodMainTimeEndInput,
         shift: req.body.prodMainShiftInput,
+        line: req.body.prodMainLineInput,
+        manager: req.body.prodMainManagerInput,
         notes: req.body.prodMainNotesInput
     });
     console.log('ID is ' + eventsProdMain._id);
