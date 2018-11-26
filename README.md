@@ -16,6 +16,7 @@
 
 ### Releases ###
 
+* v1.4.5 - 11/26/18 - Removed notes from main prod view.
 * v1.4.4 - 11/26/18 - Added Manager column to main prod view.
 * v1.4.3 - 11/26/18 - Fixed bug with line column.
 * v1.4.2 - 11/26/18 - Replaced shifts with time.
