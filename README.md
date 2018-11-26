@@ -16,6 +16,7 @@
 
 ### Releases ###
 
+* v1.4.2 - 11/26/18 - Replaced shifts with time.
 * v1.4.1 - 11/20/18 - Fixed event status bug.
 * v1.4.0 - 11/15/18 - Show all incomplete events.
 * v1.3.7 - 11/06/18 - Reduced shipping table columns.
