@@ -30,7 +30,7 @@ app.set('port', process.env.PORT || 3500 );
 app.set('view engine', 'ejs');
 app.set('views', 'app/views');
 
-app.locals.siteTitle = 'Doctors Scientific Organica Mix App';
+app.locals.siteTitle = 'Doctors Scientific Organica Production App';
 
 // override with POST having ?_method=PUT
 app.use(methodOverride('_method'));

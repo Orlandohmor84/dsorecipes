@@ -16,6 +16,7 @@
 
 ### Releases ###
 
+* v1.4.8 - 12/08/18 - Updated app title.
 * v1.4.7 - 11/27/18 - Sort main prod view by date.
 * v1.4.6 - 11/26/18 - Added line and manager to main prod form.
 * v1.4.5 - 11/26/18 - Removed notes from main prod view.
