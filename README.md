@@ -16,6 +16,7 @@
 
 ### Releases ###
 
+* v1.4.12 - 01/12/19 - Add dropdown for manager on add to production view.
 * v1.4.11 - 01/12/19 - Fixed other recipe input showing bug.
 * v1.4.10 - 01/12/19 - Dependency updates.
 * v1.4.9 - 12/11/18 - Sort ship view by due date.

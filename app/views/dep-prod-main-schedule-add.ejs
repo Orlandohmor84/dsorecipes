@@ -5,7 +5,7 @@
     <% include partials/template/head-norefresh.ejs %>
 
     <style>
-        #prodMainProductOtherWrapper {
+        #prodMainProductOtherWrapper, #prodMainManagerOtherWrapper {
             display: none;
         }
     </style>
@@ -51,8 +51,17 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="prodMainManager">Manager</label>
-                <input class="form-control" type="text" id="prodMainManager" name="prodMainManager" oninput="sessionStorage.prodMainManager=this.value;">
+                <label for="prodMainManagerSelect">Manager</label>
+                <select class="form-control" id="prodMainManagerSelect" name="prodMainManagerSelect" oninput="sessionStorage.prodMainManager=this.value;">
+                    <option value="">(select one)</option>
+                    <option>Braulio</option>
+                    <option>Digna</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="form-group" id="prodMainManagerOtherWrapper">
+                <label for="prodMainManagerOther">Manager Name</label>
+                <input class="form-control" type="text" id="prodMainManagerOther" name="prodMainManagerOther" oninput="sessionStorage.prodMainManager=this.value;">
             </div>
             <div class="form-group">
                 <label for="prodMainTimeSelect">Select Start Time</label>
@@ -76,6 +85,17 @@
             } else {
                 console.log('Product selected from dropdown.');
                 $('#prodMainProductOtherWrapper').hide();
+            }
+        });
+
+        $('#prodMainManagerSelect').change(function(){
+            console.log('Manager changed.');
+            if ($('#prodMainManagerSelect').val() == 'Other'){
+                console.log('Other manager selected.');
+                $('#prodMainManagerOtherWrapper').fadeIn();
+            } else {
+                console.log('Manager selected from dropdown.');
+                $('#prodMainManagerOtherWrapper').hide();
             }
         });
 
