@@ -3,7 +3,7 @@
 ## What is this repository for ##
 
 * Doctors Scientific Organica - Production Web App
-* Version 1.4
+* Version 1.5
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
 ### How do I get set up ###
@@ -16,6 +16,7 @@
 
 ### Releases ###
 
+* v1.5.0 - 01/16/19 - Hide Add to Schedule Button.
 * v1.4.12 - 01/12/19 - Add dropdown for manager on add to production view.
 * v1.4.11 - 01/12/19 - Fixed other recipe input showing bug.
 * v1.4.10 - 01/12/19 - Dependency updates.
