@@ -16,6 +16,7 @@
 
 ### Releases ###
 
+* v1.5.1 - 01/25/19 - Changed refresh time to 10 minutes.
 * v1.5.0 - 01/16/19 - Hide Add to Schedule Button.
 * v1.4.12 - 01/12/19 - Add dropdown for manager on add to production view.
 * v1.4.11 - 01/12/19 - Fixed other recipe input showing bug.
