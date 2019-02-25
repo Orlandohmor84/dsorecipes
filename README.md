@@ -16,6 +16,7 @@
 
 ### Releases ###
 
+* v1.5.3 - 02/25/19 - Auto update copyright year.
 * v1.5.2 - 02/04/19 - Changed refresh time to 8 minutes.
 * v1.5.1 - 01/25/19 - Changed refresh time to 10 minutes.
 * v1.5.0 - 01/16/19 - Hide Add to Schedule Button.
