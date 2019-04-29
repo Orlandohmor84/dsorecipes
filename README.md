@@ -16,6 +16,7 @@
 
 ### Releases ###
 
+* v1.5.5 - 04/29/19 - Sign in edit.
 * v1.5.4 - 03/12/19 - Updated managers list.
 * v1.5.3 - 02/25/19 - Auto update copyright year.
 * v1.5.2 - 02/04/19 - Changed refresh time to 8 minutes.
