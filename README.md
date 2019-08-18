@@ -3,7 +3,7 @@
 ## What is this repository for ##
 
 * Doctors Scientific Organica - Production Web App
-* Version 1.5
+* Version 1.6
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
 ### How do I get set up ###
@@ -16,6 +16,7 @@
 
 ### Releases ###
 
+* v1.6.0 - 08/18/19 - Separate admin and view logins.
 * v1.5.5 - 04/29/19 - Sign in edit.
 * v1.5.4 - 03/12/19 - Updated managers list.
 * v1.5.3 - 02/25/19 - Auto update copyright year.
