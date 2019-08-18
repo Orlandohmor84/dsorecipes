@@ -33,6 +33,7 @@
                             <th scope="col">Manager</th>
                             <th scope="col">Amount</th>
                             <th scope="col">Product</th>
+                            <th scope="col">Notes</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,6 +47,7 @@
                                 <td><%= event.manager %></td>
                                 <td><%= event.amount %></td>
                                 <td><%= event.nameWhole %></td>
+                                <td><%= event.notes %></td>
                                 <td style="display:none;"><%= event._id %></td>
                             </tr>
                         <% }}) %>
