@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const Recipes = require('../models/recipes');
 const Events = require('../models/events');
+const EventsProdMain = require('../models/events-prod-main');
 
 //Set up default mongoose connection
 //let uri = 'mongodb://1:2@ds237989.mlab.com:37989/heroku_pv49n3mv';
@@ -60,6 +61,18 @@ router.post('/dashboard', function(req, res, next) {
                 pathToRoot: '/',
                 pageTitle: 'Dashboard',
                 pageID: 'dashboard',
+                today: today
+                //todayNum: todayNum
+            });
+        });;
+    } else if (req.body.inputUsername == 'user' && req.body.inputPassword == '1234') {
+        let today = getToday();
+        EventsProdMain.find({}, function(err, eventsProdMain) {
+            res.render('schedule-view', {
+                eventsProdMain: eventsProdMain,
+                pathToRoot: '/',
+                pageTitle: 'Production Schedule',
+                pageID: 'scheduleView',
                 today: today
                 //todayNum: todayNum
             });

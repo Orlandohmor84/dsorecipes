@@ -61,6 +61,7 @@ app.use(require('./routes/dep-prod-main-schedule-review'));
 app.use(require('./routes/dep-ship'));
 app.use(require('./routes/dep-ship-schedule-add'));
 app.use(require('./routes/dep-ship-schedule-review'));
+app.use(require('./routes/schedule-view'));
 
 app.use(require('./routes/404'));
 
