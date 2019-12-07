@@ -79,6 +79,7 @@ router.post('/dashboard', function(req, res, next) {
         });;
     } else {
         console.log('Incorrect username or password');
+        alert('Incorrect username an/or password.');
     }
 });
 
