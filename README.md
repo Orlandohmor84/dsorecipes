@@ -9,6 +9,7 @@
 ### How do I get set up ###
 
 * Git clone git clone [https://bitbucket.org/sfldso/mixapp.git](https://bitbucket.org/sfldso/mixapp/src.git)
+* Deploy to Heroku via Github master branch [https://github.com/Orlandohmor84/dsorecipes](https://github.com/Orlandohmor84/dsorecipes)
 
 ### Who do I talk to ###
 
