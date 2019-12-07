@@ -16,6 +16,7 @@
 
 ### Releases ###
 
+* v1.7.2 - 12/07/19 - NPM Audit Fixes.
 * v1.7.1 - 08/18/19 - Added Notes Column to History Table.
 * v1.7.0 - 08/18/19 - Production History View.
 * v1.6.0 - 08/18/19 - Separate admin and view logins.
