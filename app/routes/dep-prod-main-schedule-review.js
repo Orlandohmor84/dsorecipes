@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const Events = require('../models/events');
-const Recipes = require('../models/recipes');
+//const Recipes = require('../models/recipes');
 
 //Set up default mongoose connection
 //let uri = 'mongodb://1:2@ds237989.mlab.com:37989/heroku_pv49n3mv';
