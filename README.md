@@ -17,9 +17,6 @@
 
 ### Releases ###
 
-* v1.7.5 - 12/10/19 - Revert previous two commits.
-* v1.7.4 - 12/09/19 - Model Error Bugfix.
-* v1.7.3 - 12/07/19 - Removed unused Routs/Views/Models.
 * v1.7.2 - 12/07/19 - NPM Audit Fixes.
 * v1.7.1 - 08/18/19 - Added Notes Column to History Table.
 * v1.7.0 - 08/18/19 - Production History View.
