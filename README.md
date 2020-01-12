@@ -17,6 +17,7 @@
 
 ### Releases ###
 
+* v1.8.1 - 01/12/20 - Add Delete Event Button. Done Event Improvement.
 * v1.8.0 - 01/12/20 - Mark Events as Done.
 * v1.7.2 - 12/07/19 - NPM Audit Fixes.
 * v1.7.1 - 08/18/19 - Added Notes Column to History Table.
