@@ -3,7 +3,7 @@
 ## What is this repository for ##
 
 * Doctors Scientific Organica - Production Web App
-* Version 1.7
+* Version 1.8
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
 ### How do I get set up ###
@@ -17,6 +17,7 @@
 
 ### Releases ###
 
+* v1.8.0 - 01/12/20 - Mark Events as Done.
 * v1.7.2 - 12/07/19 - NPM Audit Fixes.
 * v1.7.1 - 08/18/19 - Added Notes Column to History Table.
 * v1.7.0 - 08/18/19 - Production History View.
