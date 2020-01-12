@@ -151,8 +151,10 @@ router.get('/dep-prod-main/:eventId', function(req, res, next) {
         console.log(req.params);
         const id = req.params.eventId;
         console.log(id);
+        const status = req.query.status;
+        console.log(status);
         EventsProdMain.update({ _id: id }, { $set: { 
-            status: 'Done'
+            status: status
         } })
             .exec()
             .then(doc => {
@@ -198,6 +200,19 @@ router.put('/dep-prod-main/:eventId', function(req, res) {
         res.status(500).json({ error: err });
     })
     
+});
+
+router.delete('/dep-prod-main/:eventId/', (req,res,next) => {
+    const id = req.params.eventId;
+    EventsProdMain.remove({ _id : id })
+        .exec()
+        .then(result => {
+            res.status(200).json(result);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({ error: err });
+        })
 });
 
 module.exports = router;

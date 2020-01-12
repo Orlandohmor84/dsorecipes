@@ -37,6 +37,7 @@
                             <th scope="col">Manager</th>
                             <th scope="col">Amount</th>
                             <th scope="col">Product</th>
+                            <th scope="col">Remove</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,7 +46,7 @@
                             <tr>
                                 <td>
                                     <form action="/dep-prod-main/<%= event._id %>" method="PUT">
-                                        <imput type="hidden" name="status" value="Done"></imput>
+                                        <input type="hidden" name="status" value="Done"></input>
                                         <button class="btn btn-primary" type="submit">Mark As Done</button>
                                     </form>
                                 </td>
@@ -56,6 +57,11 @@
                                 <td><%= event.manager %></td>
                                 <td><%= event.amount %></td>
                                 <td><%= event.nameWhole %></td>
+                                <td>
+                                    <form action="/dep-prod-main/<%= event._id %>" method="DELETE">
+                                        <button class="btn btn-danger" type="submit">Delete</button>
+                                    </form>
+                                </td>
                                 <td style="display:none;"><%= event._id %></td>
                             </tr>
                         <% }}) %>
