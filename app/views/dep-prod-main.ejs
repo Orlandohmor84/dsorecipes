@@ -29,6 +29,7 @@
                 <table class="table table-striped table-sm"  id="scheduleTable" style="text-align:center;">
                     <thead>
                         <tr>
+                            <th scope="col">Complete</th>
                             <th scope="col">Date</th>
                             <th scope="col">Start</th>
                             <th scope="col">End</th>
@@ -42,6 +43,12 @@
                         <% eventsProdMain.forEach(function(event) { %>
                             <% if (event.status == 'New') { %>
                             <tr>
+                                <td>
+                                    <form action="/dep-prod-main/<%= event._id %>" method="PUT">
+                                        <imput type="hidden" name="status" value="Done"></imput>
+                                        <button class="btn btn-primary" type="submit">Mark As Done</button>
+                                    </form>
+                                </td>
                                 <td><%= event.date %></td>
                                 <td><%= event.timeStart %></td>
                                 <td><%= event.timeEnd %></td>

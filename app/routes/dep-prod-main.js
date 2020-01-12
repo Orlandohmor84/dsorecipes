@@ -142,4 +142,62 @@ router.post('/dep-prod-main', function(req, res, next) {
     });;
 });
 
+router.get('/dep-prod-main/:eventId', function(req, res, next) {
+
+    if(req.params.eventId == undefined || req.params.eventId == null || req.params.eventId == 'undefined') {
+        console.log('Having difficulties finding this event.');
+        res.redirect('/dep-prod-main');
+    } else {
+        console.log(req.params);
+        const id = req.params.eventId;
+        console.log(id);
+        EventsProdMain.update({ _id: id }, { $set: { 
+            status: 'Done'
+        } })
+            .exec()
+            .then(doc => {
+                console.log('Running then method.');
+                console.log('Database record', doc);
+                if (doc) {
+                    EventsProdMain.find({}, function(err, eventsProdMain) {
+                        res.render('dep-prod-main', {
+                            eventsProdMain: eventsProdMain,
+                            pathToRoot: '../',
+                            pageTitle: 'Main Production Schedule',
+                            pageID: 'schedule-prod-main'
+                        });
+                    });;
+                    console.log(doc.name);
+                } else {
+                    res.status(400).json({ message: 'No record for id' });
+                }
+                    
+            })  
+        .catch(err => {
+            console.log('Event not found.');
+            console.log(err);
+            res.redirect('/404');
+        });
+    }
+});
+
+router.put('/dep-prod-main/:eventId', function(req, res) {
+    console.log('Sending data to mark event as done.');
+    console.log(req.body);
+
+    EventsProdMain.update({ _id: id }, { $set: { 
+        status: 'Done'
+    } })
+    .exec()
+    .then(result => {
+        console.log(result);
+        res.status(200).json(result);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({ error: err });
+    })
+    
+});
+
 module.exports = router;
